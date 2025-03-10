@@ -1,0 +1,2755 @@
+{
+	"info": {
+		"_postman_id": "100ba596-0d9b-4a23-8062-ad40aae09855",
+		"name": "Release Items",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12174066",
+		"_collection_link": "https://www.postman.com/restless-resonance-631889/workspace/qa/collection/12174066-100ba596-0d9b-4a23-8062-ad40aae09855?action=share&source=collection_link&creator=12174066"
+	},
+	"item": [
+		{
+			"name": "AI Tag Recommender",
+			"item": [
+				{
+					"name": "DEVs API",
+					"item": [
+						{
+							"name": "Tag Recommendations",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg5REI5NEI0Q0YxQjFGNkEyRDMzOUQ1MzM1MkEyNzI5MDUxMzFBN0EiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJpZHVVdE04Ykgyb3RNNTFUTlNvbktRVVRHbm8ifQ.eyJuYmYiOjE2NzMzNDkxNTMsImV4cCI6MTY3MzM1MDA1MywiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kZXYuZG9jdW1lbnQzNjAubmV0IiwiYXVkIjoiZG9jdW1lbnQzNjBBcGkiLCJjbGllbnRfaWQiOiJkb2N1bWVudDM2MEFuZ3VsYXJBUFAiLCJzdWIiOiJhZDQyNTRmZS1hMWFhLTQ1MGMtYmQ3Yy1mZmJmYTNlMWQwMDUiLCJhdXRoX3RpbWUiOjE2NzMzNDkxNTIsImlkcCI6ImxvY2FsIiwianRpIjoiNjY3QzM2MkFENTUxMEIzN0ZBRkQxQUQyOEIwQjA4MTIiLCJzaWQiOiJDNTQ1Q0E2ODZDODkxRThFREFEQUMzMzMyQzM1Njc1MCIsImlhdCI6MTY3MzM0OTE1Mywic2NvcGUiOlsib3BlbmlkIiwiZW1haWwiLCJwcm9maWxlIiwiY3VzdG9tZXIiXSwiYW1yIjpbInB3ZCJdfQ.dk8Fs6ktbkWRWmKhYzbAMRL7Z7t_-MA-mhrVKdS8rf72zIyVdNevV6xYatM3ujV58fL1wCFBPfJSghEAWIR3vdQRTo8kGtK8rUUbKjqn99dCeb14Tb5tkytTiwQyce0EVXuQoUhoUkOFhhd3E9iQih4Ao76h-f8pSzUWqCW6lnGfpXYyDJPvjfWnWKF9JTtEkycFH5_-KJFc_AeSb36NuVj6W6Ky9h--zFldX6ClaZJ2RE39yoWboOIAgW2MFziLQL_xn1hq1BzX9X_vqY_XVyEtmqw_Ki4u2yGXTfWHq4nUHqK4gX8zjauOdC6vYXrb5UNvD87_bNZYXXeJB-Zk9g",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "e1858f1a-c5d9-465a-a58d-f54b4ab9aa1c",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.dev.document360.net/api/Settings/GetTagRecomendations?versionId=8de0a18c-7eeb-4efb-be07-e46423102c73",
+									"protocol": "https",
+									"host": [
+										"api",
+										"dev",
+										"document360",
+										"net"
+									],
+									"path": [
+										"api",
+										"Settings",
+										"GetTagRecomendations"
+									],
+									"query": [
+										{
+											"key": "versionId",
+											"value": "8de0a18c-7eeb-4efb-be07-e46423102c73"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetTagRecommendations",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg1NEU2MTlGRjlFMzJEQUZERjY4QzMwOThDNDEwNTgzQkRBRjZEMDYiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJoVTVobl9uakxhX2ZhTU1KakVFRmc3MnZiUVkifQ.eyJuYmYiOjE2NzY1MzI0NDEsImV4cCI6MTY3NjUzMzM0MSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY3NjUyNjAyNiwiaWRwIjoibG9jYWwiLCJqdGkiOiIyQTEwM0JBRTM1QkYzRUNFRTBBNDc5REE0NEM0QzNGNCIsInNpZCI6IkY2RkZCM0I0OEY1QTNGOEUxM0FCQTQxNUFBMjk3MTg0IiwiaWF0IjoxNjc2NTMyNDQxLCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.BcoqNNyaw0WwlNad0mVrZNfP0gtHCzaLHfMINGUudsWMLCQah7VnkjG3coqFKxsPoVBRfip28mvnqKU1FOkLVJrOpKeM6KnhEWq2eaaaItB-EJr51u8C_uy30BgnowE1JleJoZPMtFr7VsDXxfFMfzm1XlY0gP_0C01fRwEX2ULjCpwPFlYlW6mVRWvOdcjyrGhuNvCB9ymWFmBC7GwfwW1bs_CzjAYK5cUvtr-5n0mOLRv_kuo2Y9WfrVEhN_7ONkMpLvOZMhhMcFECFB_0h4yubtjLD6RPDFZer2i72WBMge5t3G2E27whI7zxAmkJ0ySher7un6D5Df0Vsn8sRw",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "ddf22669-1845-4ac5-aa09-d1e43b7d7512",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"articleId\": \"ea2e6000-b1c7-42ce-b3b6-d1c669f49090\",\r\n    \"isCategory\": false,\r\n    \"projectId\": \"ddf22669-1845-4ac5-aa09-d1e43b7d7512\",\r\n    \"languageCode\": \"en\",\r\n    \"versionId\": \"d4e92344-a699-4fb8-8e97-f1e96f548f0a\",\r\n    \"isCharacterCountMatches\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://portal.document360.net/api/settings/GetTagRecomendations",
+									"protocol": "https",
+									"host": [
+										"portal",
+										"document360",
+										"net"
+									],
+									"path": [
+										"api",
+										"settings",
+										"GetTagRecomendations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addTagAtPublish",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg1NEU2MTlGRjlFMzJEQUZERjY4QzMwOThDNDEwNTgzQkRBRjZEMDYiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJoVTVobl9uakxhX2ZhTU1KakVFRmc3MnZiUVkifQ.eyJuYmYiOjE2NzY1MzI0NDEsImV4cCI6MTY3NjUzMzM0MSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY3NjUyNjAyNiwiaWRwIjoibG9jYWwiLCJqdGkiOiIyQTEwM0JBRTM1QkYzRUNFRTBBNDc5REE0NEM0QzNGNCIsInNpZCI6IkY2RkZCM0I0OEY1QTNGOEUxM0FCQTQxNUFBMjk3MTg0IiwiaWF0IjoxNjc2NTMyNDQxLCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.BcoqNNyaw0WwlNad0mVrZNfP0gtHCzaLHfMINGUudsWMLCQah7VnkjG3coqFKxsPoVBRfip28mvnqKU1FOkLVJrOpKeM6KnhEWq2eaaaItB-EJr51u8C_uy30BgnowE1JleJoZPMtFr7VsDXxfFMfzm1XlY0gP_0C01fRwEX2ULjCpwPFlYlW6mVRWvOdcjyrGhuNvCB9ymWFmBC7GwfwW1bs_CzjAYK5cUvtr-5n0mOLRv_kuo2Y9WfrVEhN_7ONkMpLvOZMhhMcFECFB_0h4yubtjLD6RPDFZer2i72WBMge5t3G2E27whI7zxAmkJ0ySher7un6D5Df0Vsn8sRw",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "ddf22669-1845-4ac5-aa09-d1e43b7d7512",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tagName\": \"அரசு\",\r\n    \"projectId\": \"ddf22669-1845-4ac5-aa09-d1e43b7d7512\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://portal.document360.net/api/settings/addTagAtPublish",
+									"protocol": "https",
+									"host": [
+										"portal",
+										"document360",
+										"net"
+									],
+									"path": [
+										"api",
+										"settings",
+										"addTagAtPublish"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Data Science API",
+					"item": [
+						{
+							"name": "Recommend tags",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"Hello! This is Saravana Kumar, Founder of Document360. For three years my company struggled to maintain a good knowledge base. We were using a Knowledge base provided by a customer support tool and were spending most of our time trying to work around gaps in functionality. Eventually we started looking for alternatives, and even started to consider building our own knowledge base software, but didn't think the world needed another knowledge base platform. We didn't think the world needed another knowledge base platform.While we were looking for alternative products that matched our requirements, we realized that the market is dominated by customer support vendors who paid little attention to the knowledge base side of their product. They were missing trivial, but crucial, things like version control and auditing. More often then not, category management was either clunky or limited to three levels, contributor permissions and workflows, if they existed at all, were consistently lacking in granularity. We looked at products that focused purely on knowledge base creation and maintenance. We even moved to one of them, only to realize, after a few weeks, they didn't scale well. ...we realized that the market is dominated by customer support vendors who paid little attention to the knowledge base side of their product. After going through all this, we went back to our idea of building our own software. Using the lessons we learned, and setting the goal of providing a solid knowledge base with features that actually made maintaining a knowledge base easier, such as: thoughtful category management, version control, powerful real-time search, file/media manager, backup/restore, clean UI/UX, scalable hosting, etc, we built Document360, and, I speak on behalf on everyone on the Document360 team when I say, we hope you love it. Who's using Document360? Some of the top brands in the world such as Microsoft, IATA, and many more trust us to empower their users with the answers they need. A few customers live sites built using Document360: IATA.ORG Koorong Whatfix Bluescape Is Document360 right for me? Maybe! To help you decide, I've put together my honest opinion about knowledge base software, even recommending other products in the market that might of good fit for you based on what you need. I’ve also created multiple short videos explaining the various features of Document360, and why we've built those features. Over the next few days of your trial, I’ll also email you with tips and suggestions that'll help you navigate your trail. If you have any questions or comments you can reach me anytime at saravana@document360.io Regards, Saravana Kumar Founder - Document360\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://d360-tag.azurewebsites.net/api/httptriggertag?code=Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D",
+									"protocol": "https",
+									"host": [
+										"d360-tag",
+										"azurewebsites",
+										"net"
+									],
+									"path": [
+										"api",
+										"httptriggertag"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "1 - English",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\": \"In June of 2004, Arno Rafael Minkkinen stepped up to the microphone at the New England School of Photography to deliver the commencement speech. As he looked out at the graduating students, Minkkinen shared a simple theory that, in his estimation, made all the difference between success and failure. He called it The Helsinki Bus Station Theory. The Helsinki Bus Station Theory Minkkinen was born in Helsinki, Finland. In the center of the city there was a large bus station and he began his speech by describing it to the students. “Some two-dozen platforms are laid out in a square at the heart of the city,” Minkkinen said. “At the head of each platform is a sign posting the numbers of the buses that leave from that particular platform. The bus numbers might read as follows: 21, 71, 58, 33, and 19. Each bus takes the same route out of the city for at least a kilometer, stopping at bus stop intervals along the way.” He continued, “Now let’s say, again metaphorically speaking, that each bus stop represents one year in the life of a photographer. Meaning the third bus stop would represent three years of photographic activity. Ok, so you have been working for three years making platinum studies of nudes. Call it bus #21.” “You take those three years of work to the Museum of Fine Arts in Boston and the curator asks if you are familiar with the nudes of Irving Penn. His bus, 71, was on the same line. Or you take them to a gallery in Paris and are reminded to check out Bill Brandt, bus 58, and so on. Shocked, you realize that what you have been doing for three years others have already done.” “So you hop off the bus, grab a cab—because life is short—and head straight back to the bus station looking for another platform.” “This time,” he said, “you are going to make 8×10 view camera color snapshots of people lying on the beach from a cherry picker crane. You spend three years at it and three grand and produce a series of works that elicit the same comment. Haven’t you seen the work of Richard Misrach? Or, if they are steamy black and white 8x10s of palm trees swaying off a beachfront, haven’t you seen the work of Sally Mann?” “So once again, you get off the bus, grab the cab, race back and find a new platform. This goes on all your creative life, always showing new work, always being compared to others.” “Stay on the Bus” Minkkinen paused. He looked out at the students and asked, “What to do?” “It’s simple,” he said. “Stay on the bus. Stay on the f*cking bus. Because if you do, in time, you will begin to see a difference.” “The buses that move out of Helsinki stay on the same line, but only for a while—maybe a kilometer or two. Then they begin to separate, each number heading off to its own unique destination. Bus 33 suddenly goes north. Bus 19 southwest. For a time maybe 21 and 71 dovetail one another, but soon they split off as well. Irving Penn is headed elsewhere.” “It’s the separation that makes all the difference,” Minkkinen said. “And once you start to see that difference in your work from the work you so admire—that’s why you chose that platform after all—it’s time to look for your breakthrough. Suddenly your work starts to get noticed. Now you are working more on your own, making more of the difference between your work and what influenced it. Your vision takes off. And as the years mount up and your work begins to pile up, it won’t be long before the critics become very intrigued, not just by what separates your work from a Sally Mann or a Ralph Gibson, but by what you did when you first got started!” “You regain the whole bus route in fact. The vintage prints made twenty years ago are suddenly re-evaluated and, for what it is worth, start selling at a premium. At the end of the line—where the bus comes to rest and the driver can get out for a smoke or, better yet, a cup of coffee—that’s when the work is done. It could be the end of your career as an artist or the end of your life for that matter, but your total output is now all there before you, the early (so-called) imitations, the breakthroughs, the peaks and valleys, the closing masterpieces, all with the stamp of your unique vision.” “Why? Because you stayed on the bus.” Stay on the bus. Does Consistency Lead to Success? I write frequently about how mastery requires consistency. That includes ideas like putting in your reps, improving your average speed, and falling in love with boredom. These ideas are critical, but The Helsinki Bus Station Theory helps to clarify and distinguish some important details that often get overlooked. Does consistency lead to success? Consider a college student. They have likely spent more than 10,000 hours in a classroom by this point in their life. Are they an expert at learning every piece of information thrown at them? Not at all. Most of what we hear in class is forgotten shortly thereafter. Consider someone who works on a computer each day at work. If you've been in your job for years, it is very likely that you have spent more than 10,000 hours writing and responding to emails. Given all of this writing, do you have the skills to write the next great novel? Probably not. Consider the average person who goes to the gym each week. Many folks have been doing this for years or even decades. Are they built like elite athletes? Do they possess elite level strength? Unlikely. The key feature of The Helsinki Bus Station Theory is that it urges you to not simply do more work, but to do more re-work. It's Not the Work, It's the Re-Work Average college students learn ideas once. The best college students re-learn ideas over and over. Average employees write emails once. Elite novelists re-write chapters again and again. Average fitness enthusiasts mindlessly follow the same workout routine each week. The best athletes actively critique each repetition and constantly improve their technique. It is the revision that matters most. To continue the bus metaphor, the photographers who get off the bus after a few stops and then hop on a new bus line are still doing work the whole time. They are putting in their 10,000 hours. What they are not doing, however, is re-work. They are so busy jumping from line to line in the hopes of finding a route nobody has ridden before that they don't invest the time to re-work their old ideas. And this, as The Helsinki Bus Station Theory makes clear, is the key to producing something unique and wonderful. By staying on the bus, you give yourself time to re-work and revise until you produce something unique, inspiring, and great. It’s only by staying on board that mastery reveals itself. Show up enough times to get the average ideas out of the way and every now and then genius will reveal itself. Malcolm Gladwell's book Outliers popularized The 10,000 Hour Rule, which states that it takes 10,000 hours of deliberate practice to become an expert in a particular field. I think what we often miss is that deliberate practice is revision. If you're not paying close enough attention to revise, then you're not being deliberate. A lot of people put in 10,000 hours. Very few people put in 10,000 hours of revision. The only way to do that is to stay on the bus. Which Bus Will You Ride? We are all creators in some capacity. The manager who fights for a new initiative. The accountant who creates a faster process for managing tax returns. The nurse who thinks up a better way of managing her patients. And, of course, the writer, the designer, the painter, and the musician laboring to share their work out to the world. They are all creators. Any creator who tries to move society forward will experience failure. Too often, we respond to these failures by calling a cab and getting on another bus line. Maybe the ride will be smoother over there. Instead, we should stay on the bus and commit to the hard work of revisiting, rethinking, and revising our ideas. In order to do that, however, you must answer the toughest decision of all. Which bus will you ride? What story do you want to tell with your life? What craft do you want to spend your years revising and improving? How do you know the right answer? You don’t. Nobody knows the best bus, but if you want to fulfill your potential you must choose one. This is one of the central tensions of life. It’s your choice, but you must choose. And once you do, stay on the bus.\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://d360-tag.azurewebsites.net/api/httptriggertag?code=Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D",
+											"protocol": "https",
+											"host": [
+												"d360-tag",
+												"azurewebsites",
+												"net"
+											],
+											"path": [
+												"api",
+												"httptriggertag"
+											],
+											"query": [
+												{
+													"key": "code",
+													"value": "Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 09 Jan 2023 07:31:40 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Request-Context",
+											"value": "appId=cid-v1:7c4cdfef-feee-4186-90ad-853496f97068"
+										}
+									],
+									"cookie": [],
+									"body": "{'Tags': ['Arno Rafael Minkkinen', 'Helsinki Bus Station', 'Bus Station Theory']}"
+								},
+								{
+									"name": "2 - Hindi",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\": \"अंतिम उत्पादकता हैक नहीं कह रहा है। कुछ नहीं करना हमेशा इसे करने से तेज होगा। यह कथन मुझे पुराने कंप्यूटर प्रोग्रामिंग की याद दिलाता है, याद रखें कि कोई कोड नहीं है। यही दर्शन जीवन के अन्य क्षेत्रों में भी लागू होता है। उदाहरण के लिए, ऐसी कोई मीटिंग नहीं है जो मीटिंग न होने की तुलना में तेज़ हो. यह कहना नहीं है कि आपको कभी भी किसी अन्य बैठक में भाग नहीं लेना चाहिए, लेकिन सच्चाई यह है कि हम कई चीजों के लिए हां कहते हैं जो हम वास्तव में नहीं करना चाहते हैं। कई बैठकें आयोजित की जाती हैं जिन्हें आयोजित करने की आवश्यकता नहीं होती है। बहुत सारे कोड लिखे गए हैं जिन्हें हटाया जा सकता है। कितनी बार लोग आपको कुछ करने के लिए कहते हैं और आप बस जवाब देते हैं, निश्चित बात। तीन दिन बाद, आप इस बात से अभिभूत हैं कि आपकी कार्य सूची में कितना है। हम अपने दायित्वों से निराश हो जाते हैं, भले ही हम वे थे जिन्होंने पहली बार में उन्हें हां कहा था। यह पूछने लायक है कि क्या चीजें आवश्यक हैं। उनमें से कई नहीं हैं, और एक साधारण नहीं सबसे कुशल व्यक्ति जो भी काम जुटा सकता है, उससे अधिक उत्पादक होगा। लेकिन अगर नहीं कहने के लाभ इतने स्पष्ट हैं, तो हम इतनी बार हाँ क्यों कहते हैं? हम कई अनुरोधों से सहमत नहीं हैं क्योंकि हम उन्हें करना चाहते हैं, बल्कि इसलिए कि हम असभ्य, अभिमानी या अनुपयोगी के रूप में नहीं दिखना चाहते हैं। अक्सर, आपको किसी ऐसे व्यक्ति को ना कहने पर विचार करना पड़ता है जिसके साथ आप भविष्य में फिर से बातचीत करेंगे- आपका सहकर्मी, आपका जीवनसाथी, आपका परिवार और दोस्त। इन लोगों को ना कहना विशेष रूप से कठिन हो सकता है क्योंकि हम उन्हें पसंद करते हैं और उनका समर्थन करना चाहते हैं\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://d360-tag.azurewebsites.net/api/httptriggertag?code=Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D",
+											"protocol": "https",
+											"host": [
+												"d360-tag",
+												"azurewebsites",
+												"net"
+											],
+											"path": [
+												"api",
+												"httptriggertag"
+											],
+											"query": [
+												{
+													"key": "code",
+													"value": "Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 09 Jan 2023 08:53:37 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Request-Context",
+											"value": "appId=cid-v1:7c4cdfef-feee-4186-90ad-853496f97068"
+										}
+									],
+									"cookie": [],
+									"body": "{'Tags': ['ऐसी कोई मीटिंग', 'अंतिम उत्पादकता हैक', 'कथन मुझे पुराने']}"
+								},
+								{
+									"name": "3 - Korean",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\": \"궁극의 생산성 해킹은 '아니오'라고 말하는 것입니다. 무언가를 하지 않는 것이 항상 그것을 하는 것보다 빠를 것입니다. 이 문장은 코드가 없는 것보다 더 빠른 코드는 없다는 것을 기억하라는 오래된 컴퓨터 프로그래밍을 생각나게 합니다. 동일한 철학이 삶의 다른 영역에도 적용됩니다. 예를 들어, 회의를 전혀 하지 않는 것보다 빨리 진행되는 회의는 없습니다. 이것은 당신이 다른 모임에 절대 참석해서는 안 된다는 말은 아니지만 사실 우리는 우리가 실제로 하고 싶지 않은 많은 일에 대해 예라고 대답합니다. 개최하지 않아도 되는 회의가 많이 개최됩니다. 삭제할 수 있는 많은 코드가 작성되었습니다. 얼마나 자주 사람들이 당신에게 무엇을 하라고 요구할 때 당신은 그저 그럼요.라고 대답합니다. 3일 후, 당신은 해야 할 일 목록에 압도당할 것입니다. 우리는 처음에 의무에 대해 예라고 대답한 사람이었지만 의무 때문에 좌절하게 됩니다. 필요한 것이 있는지 물어볼 가치가 있습니다. 대부분은 그렇지 않으며 단순한 아니오 는 가장 유능한 사람이 소집할 수 있는 어떤 작업보다 더 생산적일 것입니다. 하지만 아니오라고 말하는 것의 이점이 그렇게 명백하다면 왜 우리는 예라고 자주 말합니까? 우리는 많은 요청에 동의합니다. 우리는 원해서가 아니라 무례하거나 오만하거나 도움이 되지 않는 사람으로 비춰지기를 원하지 않기 때문입니다. 동료, 배우자, 가족 및 친구와 같이 나중에 다시 교류하게 될 사람에게 거절하는 것을 고려해야 하는 경우가 많습니다. 우리는 그들을 좋아하고 지원하고 싶기 때문에 이 사람들에게 거절하는 것은 특히 어려울 수 있습니다.\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://d360-tag.azurewebsites.net/api/httptriggertag?code=Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D",
+											"protocol": "https",
+											"host": [
+												"d360-tag",
+												"azurewebsites",
+												"net"
+											],
+											"path": [
+												"api",
+												"httptriggertag"
+											],
+											"query": [
+												{
+													"key": "code",
+													"value": "Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 09 Jan 2023 08:58:42 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Request-Context",
+											"value": "appId=cid-v1:7c4cdfef-feee-4186-90ad-853496f97068"
+										}
+									],
+									"cookie": [],
+									"body": "{'Tags': ['궁극의 생산성 해킹은', '해킹은 말하는 것입니다', '우리는']}"
+								},
+								{
+									"name": "4 - Spanish",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\": \"El último truco de productividad es decir no. No hacer algo siempre será más rápido que hacerlo. Esta afirmación me recuerda a la antigua programación informática que decía: Recuerda que no hay código más rápido que la ausencia de código. La misma filosofía se aplica en otras áreas de la vida. Por ejemplo, no hay reunión que vaya más rápido que no tener ninguna reunión. Esto no quiere decir que nunca debas asistir a otra reunión, pero la verdad es que decimos que sí a muchas cosas que en realidad no queremos hacer. Hay muchas reuniones celebradas que no es necesario celebrar. Hay una gran cantidad de código escrito que podría eliminarse. ¿Con qué frecuencia la gente te pide que hagas algo y tú simplemente respondes: Claro que sí. Tres días después, te sientes abrumado por todo lo que hay en tu lista de tareas pendientes. Nos sentimos frustrados por nuestras obligaciones a pesar de que fuimos nosotros quienes les dijimos que sí en primer lugar. Vale la pena preguntarse si las cosas son necesarias. Muchos de ellos no lo son, y un simple no será más productivo que cualquier trabajo que la persona más eficiente pueda realizar. Pero si los beneficios de decir no son tan obvios, ¿por qué decimos sí con tanta frecuencia? Por qué decimos que sí Estamos de acuerdo con muchas solicitudes no porque queramos hacerlas, sino porque no queremos ser vistos como groseros, arrogantes o inútiles. A menudo, debe considerar decirle que no a alguien con quien interactuará nuevamente en el futuro: su compañero de trabajo, su cónyuge, su familia y amigos. Decir no a estas personas puede ser particularmente difícil porque nos gustan y queremos apoyarlas. (Sin mencionar que a menudo también necesitamos su ayuda). Colaborar con otros es un elemento importante de la vida. La idea de forzar la relación supera el compromiso de nuestro tiempo y energía. Por esta razón, puede ser útil ser amable en su respuesta. Haz todos los favores que puedas y sé afectuoso y directo cuando tengas que decir que no. Pero incluso después de haber tenido en cuenta estas consideraciones sociales, muchos de nosotros todavía parecemos hacer un mal trabajo al manejar la compensación entre sí y no. Nos encontramos demasiado comprometidos con cosas que no mejoran o apoyan significativamente a quienes nos rodean, y ciertamente no mejoran nuestras propias vidas. Quizás un problema es cómo pensamos sobre el significado de sí y no. La diferencia entre sí y no Las palabras “sí” y “no” se comparan entre sí con tanta frecuencia que parece que tienen el mismo peso en una conversación. En realidad, no son simplemente opuestos en significado, sino de magnitudes completamente diferentes en compromiso. Cuando dices que no, solo estás diciendo que no a una opción. Cuando dices que sí, estás diciendo que no a todas las demás opciones. Me gusta cómo lo expresó el economista Tim Harford: “Cada vez que decimos que sí a una solicitud, también decimos que no a cualquier otra cosa que podamos lograr con el tiempo”. Una vez que se ha comprometido con algo, ya ha decidido cómo se utilizará ese futuro bloque de tiempo. En otras palabras, decir no te ahorra tiempo en el futuro. Decir que sí te cuesta tiempo en el futuro. No es una forma de crédito de tiempo. Conservas la capacidad de pasar tu tiempo futuro como quieras. Sí es una forma de deuda de tiempo. Tienes que devolver tu compromiso en algún momento. No es una decisión. Sí es una responsabilidad.\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://d360-tag.azurewebsites.net/api/httptriggertag?code=Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D",
+											"protocol": "https",
+											"host": [
+												"d360-tag",
+												"azurewebsites",
+												"net"
+											],
+											"path": [
+												"api",
+												"httptriggertag"
+											],
+											"query": [
+												{
+													"key": "code",
+													"value": "Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 09 Jan 2023 09:01:14 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Request-Context",
+											"value": "appId=cid-v1:7c4cdfef-feee-4186-90ad-853496f97068"
+										}
+									],
+									"cookie": [],
+									"body": "{'Tags': ['Más Rápido', 'Con', 'Una']}"
+								},
+								{
+									"name": "5 - Hebrew",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\": \"תפקידו של לא לומר לא נתפס לפעמים כמותרות שרק בעלי הכוח יכולים להרשות לעצמם. וזה נכון: קל יותר לדחות הזדמנויות כאשר אתה יכול ליפול בחזרה לרשת הביטחון שמספקת כוח, כסף וסמכות. אבל זה גם נכון שאמירת לא היא לא רק פריבילגיה השמורה למצליחנים שבינינו. זו גם אסטרטגיה שיכולה לעזור לך להצליח. אמירת לא היא מיומנות חשובה לפתח בכל שלב בקריירה שלך, כי היא שומרת על הנכס החשוב ביותר בחיים: הזמן שלך. כפי שניסח זאת המשקיע פדרו סורנטינואם לא תשמור על הזמן שלך, אנשים יגנבו אותו ממך. אתה צריך להגיד לא לכל מה שלא מוביל אותך לעבר המטרות שלך. אתה צריך להגיד לא להסחות דעת. כפי שאמר לי אחד הקוראים, אם אתה מרחיב את ההגדרה לגבי האופן שבו אתה מיישם לא, זה למעשה הפריצה היחידה לפרודוקטיביות (כפי שאתה אומר בסופו של דבר לא לכל הסחת דעת כדי להיות פרודוקטיבי). אף אחד לא גילם את הרעיון הזה טוב יותר מסטיב ג'ובס, שאמר, אנשים חושבים שהתמקדות משמעה לומר כן לדבר שאתה צריך להתמקד בו. אבל זה בכלל לא מה שזה אומר. זה אומר להגיד לא למאה הרעיונות הטובים האחרים שיש. צריך לבחור בזהירות. יש כאן איזון חשוב. להגיד לא לא אומר שלעולם לא תעשה משהו מעניין או חדשני או ספונטני. זה רק אומר שאתה אומר כן בצורה ממוקדת. לאחר שדפקת את הסחות הדעת, זה יכול להיות הגיוני לומר כן לכל הזדמנות שעלולה להניע אותך בכיוון הנכון. ייתכן שתצטרך לנסות דברים רבים כדי לגלות מה עובד וממה אתה נהנה. תקופת חקר זו יכולה להיות חשובה במיוחד בתחילת פרויקט, עבודה או קריירה. שדרוג הלא שלך עם הזמן, ככל שאתה ממשיך להשתפר ולהצליח, האסטרטגיה שלך צריכה להשתנות. עלות ההזדמנות של הזמן שלך גדלה ככל שאתה מצליח יותר. בהתחלה, אתה פשוט מבטל את הסחות הדעת הברורות וחוקר את השאר. ככל שהכישורים שלך משתפרים ואתה לומד להפריד בין מה שעובד לבין מה שלא, אתה צריך להגדיל ללא הרף את הסף שלך לאמירת כן. אתה עדיין צריך להגיד לא להסחות דעת, אבל אתה צריך גם ללמוד להגיד לא להזדמנויות שהיו בעבר שימושים טובים בזמן, כדי שתוכל לפנות מקום לניצול נהדר של זמן. זו בעיה טובה שיש, אבל זו יכולה להיות מיומנות שקשה לשלוט בה. במילים אחרות, עליך לשדרג את הלא שלך לאורך זמן. שדרוג הלא שלך לא אומר שלעולם לא תגיד כן. זה רק אומר שאתה כברירת מחדל להגיד לא ואומר כן רק כשזה באמת הגיוני. אם לצטט את המשקיע ברנט בשור, להגיד לא זה כל כך חזק כי זה משמר את ההזדמנות לומר כן. נראה שהמגמה הכללית היא משהו כזה: אם אתה יכול ללמוד להגיד לא להסחות דעת רעות, אז בסופו של דבר תרוויח את הזכות להגיד לא להזדמנויות טובות. איך להגיד לא רובנו כנראה ממהרים מדי להגיד כן ואיטיים מדי להגיד לא. כדאי לשאול את עצמך איפה אתה נופל על הספקטרום הזה. אם אתה מתקשה לומר לא, ייתכן שתמצא את האסטרטגיה הבאה שהוצעה על ידי טים הארפורד, הכלכלן הבריטי שהזכרתי קודם לכן, כמועילה. הוא כותב, טריק אחד הוא לשאול, אם הייתי צריך לעשות את זה היום, האם הייתי מסכים לזה?זה כלל אצבע לא רע, שכן כל מחויבות עתידית, לא משנה כמה רחוקה היא תהיה, תהפוך בסופו של דבר לבעיה קרובה. אם הזדמנות מרגשת מספיק כדי להפסיק את כל מה שאתה עושה עכשיו, אז זה כן. אם זה לא, אז אולי כדאי לחשוב פעמיים. זה דומה לשיטת Hell Yeah or No הידועה של דרק סיברס. אם מישהו מבקש ממך לעשות משהו והתגובה הראשונה שלך היא לעזאזל כן!, אז עשה זאת. אם זה לא מרגש אותך, אז תגיד לא. אי אפשר לזכור לשאול את עצמך את השאלות האלה בכל פעם שאתה עומד בפני החלטה, אבל זה עדיין תרגיל שימושי שכדאי לחזור עליו מדי פעם. להגיד לא יכול להיות קשה, אבל לרוב זה קל יותר מהאלטרנטיבה. כפי שציין הסופר מייק דריאנו, קל יותר להימנע ממחויבויות מאשר לצאת ממחויבויות. אמירת לא מובילה אותך לקראת הקצה הקל יותר של הספקטרום הזה. מה שנכון לגבי בריאות נכון גם לגבי פרודוקטיביות: גרם של מניעה שווה קילו של תרופה. הכוח של אין יותר מאמץ מבוזבז לעשות דברים לא חשובים מאשר מבוזבז לעשות דברים בצורה לא יעילה. ואם זה המקרה, חיסול הוא מיומנות שימושית יותר מאופטימיזציה. אני נזכר בציטוט המפורסם של פיטר דרוקר, אין דבר כל כך חסר תועלת כמו לעשות ביעילות את מה שאסור לעשות בכלל.\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://d360-tag.azurewebsites.net/api/httptriggertag?code=Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D",
+											"protocol": "https",
+											"host": [
+												"d360-tag",
+												"azurewebsites",
+												"net"
+											],
+											"path": [
+												"api",
+												"httptriggertag"
+											],
+											"query": [
+												{
+													"key": "code",
+													"value": "Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 09 Jan 2023 09:08:26 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{'Tags': ['יכולים להרשות לעצמם', 'נתפס לפעמים כמותרות', 'להגיד']}"
+								},
+								{
+									"name": "6 - Finnish",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\": \"Vuonna 1955 Disneyland oli juuri avattu Anaheimissa, Kaliforniassa, kun 10-vuotias poika astui sisään ja pyysi työtä. Työlainsäädäntö oli silloin löysä, ja poika onnistui saamaan paikan, joka myi oppaita 0,50 dollarilla kappaleelta. Vuoden sisällä hän oli siirtynyt Disneyn taikakauppaan, jossa hän oppi temppuja vanhemmilta työntekijöiltä. Hän kokeili vitsejä ja kokeili vierailijoille yksinkertaisia rutiineja. Pian hän huomasi, että se, mitä hän rakasti, ei ollut taikuutta, vaan esiintymistä yleensä. Hän päätti ryhtyä koomikoksi. Teini-iästä lähtien hän alkoi esiintyä pienissä klubeissa Los Angelesissa. Väkijoukkoja oli vähän ja hänen tekonsa oli lyhyt. Hän oli harvoin lavalla viittä minuuttia pidempään. Suurin osa ihmisistä oli liian kiireisiä juomassa tai puhumassa ystävien kanssa kiinnittääkseen huomiota. Eräänä iltana hän kirjaimellisesti toimitti stand up -rutiininsa tyhjään klubiin. Se ei ollut hohdokas työ, mutta ei ollut epäilystäkään, että hän parantui. Hänen ensimmäiset rutiinit kestivät vain yhden tai kaksi minuuttia. Lukioon mennessä hänen materiaalinsa oli laajentunut sisältämään viiden minuutin näytöksen ja muutamaa vuotta myöhemmin kymmenen minuutin esityksen. 19-vuotiaana hän esiintyi viikoittain kaksikymmentä minuuttia kerrallaan. Hänen täytyi lukea esityksen aikana kolme runoa, jotta rutiini olisi tarpeeksi pitkä, mutta hänen taitonsa kehittyi edelleen. Hän vietti vielä vuosikymmenen kokeilemalla, säätäen ja harjoittaen. Hän otti työpaikan televisiokirjailijana, ja vähitellen hän onnistui saamaan omat esiintymisensä keskusteluohjelmissa. 1970-luvun puoliväliin mennessä hän oli työskennellyt vakituisena vieraana The Tonight Showssa ja Saturday Night Livessä. Lopulta, lähes viidentoista vuoden työn jälkeen, nuori mies nousi kuuluisuuteen. Hän kiersi kuusikymmentä kaupunkia 63 päivässä. Sitten seitsemänkymmentäkaksi kaupunkia kahdeksassakymmenessä päivässä. Sitten kahdeksankymmentäviisi kaupunkia yhdeksässäkymmenessä päivässä. Hänellä oli 18 695 ihmistä osallistumassa yhteen näyttelyyn Ohiossa. Toiset 45 000 lippua myytiin hänen kolmipäiväiseen esitykseensä New Yorkissa. Hän nousi genrensä huipulle ja hänestä tuli yksi aikansa menestyneimmistä koomikoista. Hänen nimensä on Steve Martin. Steve Martin (Kuinka pysyä motivoituneena elämässä ja työssä) Steve Martin esiintymässä Chicagossa, Illinoisissa vuonna 1978. (Kuva: Paul Natkin.) Kuinka pysyä motivoituneena Sain äskettäin valmiiksi Steve Martinin upean omaelämäkerran, Born Standing Up. Martinin tarina tarjoaa kiehtovan näkökulman siitä, mitä tarvitaan tottumuksiin pitäytymiseen pitkällä aikavälillä. Komedia ei ole arkaille. On vaikea kuvitella tilannetta, joka iskee pelkoa useamman ihmisen sydämiin kuin esiintyminen yksin lavalla eikä naurattaisi yhtään. Ja silti Steve Martin kohtasi tämän pelon joka viikko kahdeksantoista vuoden ajan. Hänen sanoin: 10 vuotta käytettiin oppimiseen, 4 vuotta jalostukseen ja 4 vuotta villinä menestyksenä. Miksi jotkut ihmiset, kuten Martin, pitävät kiinni tottumuksistaan – harjoittelevatpa vitsejä tai piirtävät sarjakuvia tai soittavat kitaraa – kun taas useimmat meistä kamppailevat pysyäkseen motivoituneina? Kuinka suunnittelemme tottumuksia, jotka vetävät meidät mukaansa sen sijaan, että ne katoavat? Tiedemiehet ovat tutkineet tätä kysymystä useiden vuosien ajan. Vaikka opittavaa on vielä paljon, yksi johdonmukaisimmista havainnoista on, että tapa ylläpitää motivaatiota ja saavuttaa halun huipputaso on työskennellä vain hallittavissa olevien vaikeuksien parissa. Kultakutrisääntö Ihmisaivot rakastavat haastetta, mutta vain jos ne ovat optimaalisen vaikeusalueen sisällä. Jos rakastat tennistä ja yrität pelata vakavaa ottelua nelivuotiasta vastaan, kyllästyt nopeasti. Se on liian helppoa. Voitat jokaisen pisteen. Sitä vastoin, jos pelaat ammattilaistennispelaajaa, kuten Roger Federer tai Serena Williams, menetät nopeasti motivaatiosi, koska ottelu on liian vaikea. Harkitse nyt tenniksen pelaamista jotakuta vastaan, joka on sinulle tasavertainen. Pelin edetessä voitat muutaman pisteen ja menetät muutaman. Sinulla on hyvät mahdollisuudet voittaa, mutta vain jos todella yrität. Keskittymisesi kapenee, häiriötekijät häviävät ja olet täysin sitoutunut käsillä olevaan tehtävään. Tämä on haaste, jonka vaikeus on vain hallittavissa, ja se on loistava esimerkki Goldilocks Rule -säännöstä. Goldilocks Rule sanoo, että ihmiset kokevat huippumotivaation työskennellessään tehtävissä, jotka ovat heidän nykyisten kykyjensä partaalla. Ei liian kovaa. Ei liian helppoa. Juuri oikea. Martinin komediaura on erinomainen esimerkki kultakutrisäännöstä käytännössä. Joka vuosi hän laajensi komediarutiiniaan - mutta vain minuutilla tai kahdella. Hän lisäsi aina uutta materiaalia, mutta säilytti myös muutamia vitsejä, jotka saivat taatusti naurua. Voittoja oli juuri tarpeeksi pitämään hänet motivoituneena ja juuri tarpeeksi virheitä, jotta hän pysyi kovalla työssä. Kultakutrisääntö (Kuinka pysyä motivoituneena elämässä ja työssä) Mittaa edistymistäsi Jos haluat oppia pysymään motivoituneena saavuttaaksesi tavoitteesi, on motivaatiopalapelin toinen osa, joka on ratkaisevan tärkeää ymmärtää. Se liittyy siihen, että saavutetaan täydellinen sekoitus kovaa työtä ja onnellisuutta. Optimaalisen vaikeustason haasteiden parissa työskentelemisen on havaittu olevan paitsi motivoivaa myös motivoivaa\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://d360-tag.azurewebsites.net/api/httptriggertag?code=Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D",
+											"protocol": "https",
+											"host": [
+												"d360-tag",
+												"azurewebsites",
+												"net"
+											],
+											"path": [
+												"api",
+												"httptriggertag"
+											],
+											"query": [
+												{
+													"key": "code",
+													"value": "Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 09 Jan 2023 09:14:48 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Request-Context",
+											"value": "appId=cid-v1:7c4cdfef-feee-4186-90ad-853496f97068"
+										}
+									],
+									"cookie": [],
+									"body": "{'Tags': ['Juuri Avattu Anaheimissa', 'Disneyland Oli Juuri', 'Hän']}"
+								},
+								{
+									"name": "7 - Greek",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\": \"Ο κανόνας του Goldilocks Ο ανθρώπινος εγκέφαλος αγαπά μια πρόκληση, αλλά μόνο εάν βρίσκεται σε μια βέλτιστη ζώνη δυσκολίας. Αν αγαπάς το τένις και προσπαθείς να παίξεις έναν σοβαρό αγώνα με ένα τετράχρονο παιδί, γρήγορα θα βαρεθείς. είναι πολύ εύκολο. Θα κερδίσεις κάθε πόντο. Αντίθετα, αν παίξετε έναν επαγγελματία τενίστα όπως ο Ρότζερ Φέντερερ ή η Σερένα Γουίλιαμς, θα χάσετε γρήγορα το κίνητρο γιατί ο αγώνας είναι πολύ δύσκολος. Τώρα σκεφτείτε να παίξετε τένις ενάντια σε κάποιον που είναι ισάξιός σας. Καθώς το παιχνίδι εξελίσσεται, κερδίζετε μερικούς πόντους και χάνετε λίγους. Έχετε πολλές πιθανότητες να κερδίσετε, αλλά μόνο αν προσπαθήσετε πραγματικά. Η εστίασή σας περιορίζεται, οι περισπασμοί εξαφανίζονται και βρίσκεστε πλήρως επενδυμένοι στην εργασία που έχετε. Αυτή είναι μια πρόκληση απλώς διαχειρίσιμης δυσκολίας και αποτελεί χαρακτηριστικό παράδειγμα του κανόνα των Goldilocks. Ο κανόνας του Goldilocks δηλώνει ότι οι άνθρωποι βιώνουν το μέγιστο κίνητρο όταν εργάζονται σε εργασίες που είναι ακριβώς στο όριο των σημερινών ικανοτήτων τους. Όχι πολύ σκληρά. Όχι πολύ εύκολο. Ακριβώς δεξιά. Η κωμική καριέρα του Martin είναι ένα εξαιρετικό παράδειγμα του κανόνα των Goldilocks στην πράξη. Κάθε χρόνο, επέκτεινε την κωμωδία του —αλλά μόνο κατά ένα ή δύο λεπτά. Πάντα προσέθετε νέο υλικό, αλλά κρατούσε και μερικά ανέκδοτα που σίγουρα θα προκαλούσαν γέλια. Υπήρχαν απλώς αρκετές νίκες για να τον κρατήσουν κίνητρο και αρκετά λάθη για να τον συνεχίσουν να δουλεύει σκληρά. Ο κανόνας του Goldilocks (Πώς να παραμείνετε παρακινημένοι στη ζωή και την εργασία) Μετρήστε την πρόοδό σας Εάν θέλετε να μάθετε πώς να παραμένετε παρακινημένοι για να πετύχετε τους στόχους σας, τότε υπάρχει ένα δεύτερο κομμάτι του παζλ κινήτρων που είναι κρίσιμο να κατανοήσετε. Έχει να κάνει με την επίτευξη αυτού του τέλειου μείγματος σκληρής δουλειάς και ευτυχίας. Η εργασία σε προκλήσεις βέλτιστου επιπέδου δυσκολίας έχει βρεθεί ότι όχι μόνο είναι κίνητρο, αλλά και σημαντική πηγή ευτυχίας. Όπως το έθεσε ο ψυχολόγος Gilbert Brim, «Μία από τις σημαντικές πηγές ανθρώπινης ευτυχίας είναι να εργάζεσαι σε εργασίες σε κατάλληλο επίπεδο δυσκολίας, ούτε πολύ δύσκολο ούτε πολύ εύκολο». Αυτός ο συνδυασμός ευτυχίας και κορυφαίας απόδοσης αναφέρεται μερικές φορές ως ροή, κάτι που βιώνουν οι αθλητές και οι ερμηνευτές όταν βρίσκονται «στη ζώνη». Η ροή είναι η ψυχική κατάσταση που βιώνετε όταν είστε τόσο συγκεντρωμένοι στην εργασία που έχετε να κάνετε που ο υπόλοιπος κόσμος εξαφανίζεται. Ωστόσο, για να φτάσετε σε αυτήν την κατάσταση κορυφαίας απόδοσης, δεν χρειάζεται μόνο να δουλέψετε σε προκλήσεις στον σωστό βαθμό δυσκολίας, αλλά και να μετρήσετε την άμεση πρόοδό σας. Όπως εξηγεί ο ψυχολόγος Jonathan Haidt, ένα από τα κλειδιά για την επίτευξη μιας κατάστασης ροής είναι ότι «λαμβάνετε άμεση ανατροφοδότηση για το πώς τα πάτε σε κάθε βήμα». Το να βλέπεις τον εαυτό σου να προοδεύει αυτή τη στιγμή είναι απίστευτα κίνητρο. Ο Στιβ Μάρτιν έλεγε ένα αστείο και αμέσως κατάλαβε αν λειτούργησε με βάση το γέλιο του πλήθους. Φανταστείτε πόσο εθιστικό θα ήταν να δημιουργήσετε ένα βρυχηθμό γέλιου. Η βιασύνη των θετικών σχολίων που βίωσε ο Μάρτιν από ένα υπέροχο αστείο θα ήταν πιθανώς αρκετή για να υπερνικήσει τους φόβους του και να τον εμπνεύσει να εργαστεί για εβδομάδες. Σε άλλους τομείς της ζωής, η μέτρηση φαίνεται διαφορετική, αλλά είναι εξίσου κρίσιμη για την επίτευξη ενός συνδυασμού κινήτρων και ευτυχίας. Στο τένις, λαμβάνετε άμεση ανατροφοδότηση με βάση το αν κερδίσετε ή όχι τον πόντο. Ανεξάρτητα από το πώς μετριέται, ο ανθρώπινος εγκέφαλος χρειάζεται κάποιο τρόπο να οπτικοποιήσει την πρόοδό μας, αν θέλουμε να διατηρήσουμε τα κίνητρα. Πρέπει να μπορούμε να δούμε τις νίκες μας. Δύο βήματα για το κίνητρο Αν θέλουμε να καταρρίψουμε το μυστήριο του πώς να παραμείνουμε παρακινημένοι για μακροπρόθεσμο ορίζοντα, θα μπορούσαμε απλά να πούμε: Επιμείνετε στον κανόνα του Goldilocks και δουλέψτε σε εργασίες απλώς διαχειρίσιμης δυσκολίας. Μετρήστε την πρόοδό σας και λάβετε άμεσα σχόλια όποτε είναι δυνατόν. Το να θέλεις να βελτιώσεις τη ζωή σου είναι εύκολο. Το να μένεις σε αυτό είναι μια διαφορετική ιστορία. Εάν θέλετε να παραμείνετε με κίνητρο για τα καλά, ξεκινήστε με μια πρόκληση που είναι απλώς διαχειρίσιμη, μετρήστε την πρόοδό σας και επαναλάβετε τη διαδικασία.\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://d360-tag.azurewebsites.net/api/httptriggertag?code=Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D",
+											"protocol": "https",
+											"host": [
+												"d360-tag",
+												"azurewebsites",
+												"net"
+											],
+											"path": [
+												"api",
+												"httptriggertag"
+											],
+											"query": [
+												{
+													"key": "code",
+													"value": "Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 09 Jan 2023 09:17:37 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Request-Context",
+											"value": "appId=cid-v1:7c4cdfef-feee-4186-90ad-853496f97068"
+										}
+									],
+									"cookie": [],
+									"body": "{'Tags': ['Και', 'Του Goldilocks', 'Για']}"
+								},
+								{
+									"name": "8 - German",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\": \"Audrey Hepburn war eine Ikone. Sie wurde in den 1950er Jahren berühmt und war eine der größten Schauspielerinnen ihrer Zeit. 1953 gewann Hepburn als erste Schauspielerin einen Academy Award, einen Golden Globe Award und einen BAFTA Award für eine einzige Leistung: ihre Hauptrolle in der romantischen Komödie Roman Holiday. Noch heute, über ein halbes Jahrhundert später, ist sie eine von nur 15 Personen, die einen „EGOT“ verdient haben, indem sie alle vier großen Unterhaltungspreise gewonnen hat: Emmy, Grammy, Oscar und Tony. In den 1960er Jahren drehte sie im Durchschnitt mehr als einen neuen Film pro Jahr, und nach allgemeiner Einschätzung war sie auf dem besten Weg, für die kommenden Jahrzehnte ein Filmstar zu sein. Aber dann passierte etwas Komisches: Sie hörte auf zu schauspielern. Obwohl Hepburn in ihren Dreißigern und auf dem Höhepunkt ihrer Popularität war, hörte sie nach 1967 im Grunde auf, in Filmen aufzutreten. Sie trat während ihres restlichen Lebens nur fünf Mal in Fernsehshows oder Filmen auf. Stattdessen wechselte sie den Beruf. Sie verbrachte die nächsten 25 Jahre damit, unermüdlich für UNICEF zu arbeiten, den Arm der Vereinten Nationen, der Kinder in kriegszerrütteten Ländern mit Nahrung und Gesundheitsversorgung versorgt. Sie leistete Freiwilligenarbeit in ganz Afrika, Südamerika und Asien. Hepburns erster Akt war auf der Bühne. Ihre nächste Tat war eine des Dienstes. Im Dezember 1992 wurde ihr für ihre Bemühungen die Presidential Medal of Freedom verliehen, die höchste zivile Auszeichnung der Vereinigten Staaten. Wir werden gleich auf ihre Geschichte zurückkommen.\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://d360-tag.azurewebsites.net/api/httptriggertag?code=Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D",
+											"protocol": "https",
+											"host": [
+												"d360-tag",
+												"azurewebsites",
+												"net"
+											],
+											"path": [
+												"api",
+												"httptriggertag"
+											],
+											"query": [
+												{
+													"key": "code",
+													"value": "Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 09 Jan 2023 09:51:51 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{'Tags': ['War Eine Ikone', 'Golden Globe Award', 'Sie']}"
+								},
+								{
+									"name": "9 - English",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\": \"You get one, precious life. How do you decide the best way to spend your time? Productivity gurus will often suggest that you focus on being effective rather than being efficient. Efficiency is about getting more things done. Effectiveness is about getting the right things done. Peter Drucker, the well-known management consultant, once encapsulated the idea by writing, “There is nothing so useless as doing efficiently that which should not be done at all.” In other words, making progress is not just about being productive. It’s about being productive on the right things. But how do you decide what the “right things” are? One of the most trusted approaches is to use the Pareto Principle, which is more commonly known as the 80/20 Rule. The 80/20 Rule states that, in any particular domain, a small number of things account for the majority of the results. For example, 80 percent of the land in Italy is owned by 20 percent of the people. Or, 75 percent of NBA championships are won by 20 percent of the teams. The numbers don’t have to add up to 100. The point is that the majority of the results are driven by a minority of causes. The Upside of the 80/20 Rule When applied to your life and work, the 80/20 Rule can help you separate “the vital few from the trivial many.” For example, business owners may discover the majority of revenue comes from a handful of important clients. The 80/20 Rule would recommend that the most effective course of action would be to focus exclusively on serving these clients (and on finding others like them) and either stop serving others or let the majority of customers gradually fade away because they account for a small portion of the bottom line. This same strategy can be useful if you practice inversion and look at the sources of your problems. You may find that the majority of your complaints come from a handful of problem clients. The 80/20 Rule would suggest that you can clear out your backlog of customer service requests by firing these clients. The 80/20 Rule is like a form of judo for life and work. By finding precisely the right area to apply pressure, you can get more results with less effort. It’s a great strategy, and I have used it many times. But there is a downside to this approach, as well, and it is often overlooked. To understand this pitfall, we return to Audrey Hepburn.\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://d360-tag.azurewebsites.net/api/httptriggertag?code=Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D",
+											"protocol": "https",
+											"host": [
+												"d360-tag",
+												"azurewebsites",
+												"net"
+											],
+											"path": [
+												"api",
+												"httptriggertag"
+											],
+											"query": [
+												{
+													"key": "code",
+													"value": "Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 09 Jan 2023 09:53:42 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Request-Context",
+											"value": "appId=cid-v1:7c4cdfef-feee-4186-90ad-853496f97068"
+										}
+									],
+									"cookie": [],
+									"body": "{'Tags': ['Rule', 'Things', 'Majority']}"
+								},
+								{
+									"name": "10 - English",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"content\": \"Efficient vs. Effective You get one, precious life. How do you decide the best way to spend your time? Productivity gurus will often suggest that you focus on being effective rather than being efficient. Efficiency is about getting more things done. Effectiveness is about getting the right things done. Peter Drucker, the well-known management consultant, once encapsulated the idea by writing, “There is nothing so useless as doing efficiently that which should not be done at all.” In other words, making progress is not just about being productive. It’s about being productive on the right things. But how do you decide what the “right things” are? One of the most trusted approaches is to use the Pareto Principle, which is more commonly known as the 80/20 Rule. The 80/20 Rule states that, in any particular domain, a small number of things account for the majority of the results. For example, 80 percent of the land in Italy is owned by 20 percent of the people. Or, 75 percent of NBA championships are won by 20 percent of the teams. The numbers don’t have to add up to 100. The point is that the majority of the results are driven by a minority of causes. The Upside of the 80/20 Rule When applied to your life and work, the 80/20 Rule can help you separate “the vital few from the trivial many.” For example, business owners may discover the majority of revenue comes from a handful of important clients. The 80/20 Rule would recommend that the most effective course of action would be to focus exclusively on serving these clients (and on finding others like them) and either stop serving others or let the majority of customers gradually fade away because they account for a small portion of the bottom line. This same strategy can be useful if you practice inversion and look at the sources of your problems. You may find that the majority of your complaints come from a handful of problem clients. The 80/20 Rule would suggest that you can clear out your backlog of customer service requests by firing these clients. The 80/20 Rule is like a form of judo for life and work. By finding precisely the right area to apply pressure, you can get more results with less effort. It’s a great strategy, and I have used it many times. But there is a downside to this approach, as well, and it is often overlooked. To understand this pitfall, we return to Audrey Hepburn. The Downside of the 80/20 Rule Imagine it is 1967. Audrey Hepburn is in the prime of her career and trying to decide how to spend her time. If she uses the 80/20 Rule as part of her decision-making process, she will discover a clear answer: do more romantic comedies. Many of Hepburn’s best films were romantic comedies like Roman Holiday, Sabrina, Breakfast at Tiffany’s, and Charade. She starred in these four films between 1953 and 1963; by 1967, she was due for another one. They attracted large audiences, earned her awards, and were an obvious path to greater fame and fortune. Romantic comedies were effective for Audrey Hepburn. In fact, even if we take into account her desire to help children through UNICEF, an 80/20 analysis might have revealed that starring in more romantic comedies was still the best option because she could have maximized her earning power and donated the additional earnings to UNICEF. Of course, that’s all well and good if she wanted to continue acting. But she didn’t want to be an actress. She wanted to serve. And no reasonable analysis of the highest and best use of her time in 1967 would have suggested that volunteering for UNICEF was the most effective use of her time. This is the downside of the 80/20 Rule: A new path will never look like the most effective option in the beginning. Optimizing for Your Past or Your Future Here’s another example: Jeff Bezos, the founder of Amazon, worked on Wall Street and climbed the corporate ladder to become senior vice-president of a hedge fund before leaving it all in 1994 to start the company. If Bezos had applied the 80/20 Rule in 1993 in an attempt to discover the most effective areas to focus on in his career, it is virtually impossible to imagine that founding an internet company would have been on the list. At that point in time, there is no doubt that the most effective path—whether measured by financial gain, social status, or otherwise—would have been the one where he continued his career in finance. The 80/20 Rule is calculated and determined by your recent effectiveness. Whatever seems like the “highest value” use of your time in any given moment will be dependent on your previous skills and current opportunities. The 80/20 Rule will help you find the useful things in your past and get more of them in the future. But if you don’t want your future to be more of your past, then you need a different approach. The downside of being effective is that you often optimize for your past rather than for your future. Where to Go From Here Here’s the good news: given enough practice and enough time, the thing that previously seemed ineffective can become very effective. You get good at what you practice. When Audrey Hepburn dialed down her acting career in 1967, volunteering didn’t seem nearly as effective. But three decades later, she received the Presidential Medal of Freedom—a remarkable feat she is unlikely to have accomplished by acting in more romantic comedies. The process of learning a new skill or starting a new company or taking on a new adventure of any sort will often appear to be an ineffective use of time at first. Compared to the other things you already know how to do, the new thing will seem like a waste of time. It will never win the 80/20 analysis. But that doesn’t mean it’s the wrong decision.\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://d360-tag.azurewebsites.net/api/httptriggertag?code=Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D",
+											"protocol": "https",
+											"host": [
+												"d360-tag",
+												"azurewebsites",
+												"net"
+											],
+											"path": [
+												"api",
+												"httptriggertag"
+											],
+											"query": [
+												{
+													"key": "code",
+													"value": "Kbovbbdwfgea6kcLBSm3pF0TMTnLw-I5HznHHPW634g6AzFuagBAog%3D%3D"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 09 Jan 2023 10:30:55 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Kestrel"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Request-Context",
+											"value": "appId=cid-v1:7c4cdfef-feee-4186-90ad-853496f97068"
+										}
+									],
+									"cookie": [],
+									"body": "{'Tags': ['Rule', 'Audrey Hepburn', 'Effective']}"
+								}
+							]
+						},
+						{
+							"name": "Recommend Tags",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"The open systems interconnection (osi) model is a description of how the internet works. It breaks down the functions involved in sending data over the internet into seven layers. Each layer has some function that prepares the data to be sent over wires, cables, and radio waves as a series of bits. It routes the signal through different channels to the other end and works!! As the data link layer oversees the delivery of the packets between two systems on the same network; the network layer mainly ensures that each packet gets from its point of origin to the final destination.  ## the seven layers of the osi model are: 7. Application layer: data generated by and usable by software applications. The main protocol used at this layer is http. 6. Presentation layer: data is translated into a form the application can accept. Some authorities consider https encryption and decryption to take place at this layer. 5. Session layer: controls connections between computers (this can also be handled at layer 4 by the tcp protocol). 4. Transport layer: provides the means for transmitting data between the two connected parties, as well as controlling the quality of service. The main protocols used here are tcp and udp. 3. Network layer: handles the routing and sending of data between different networks. The most important protocols at this layer are ip and icmp. 2. Data link layer: handles communications between devices on the same network. If layer 3 is like the address on a piece of mail, then layer 2 is like indicating the office number or apartment number at that address. Ethernet is the protocol most used here. 1. Physical layer: packets are converted into electrical, radio, or optical pulses and transmitted as bits (the smallest possible units of information) over wires, radio waves, or cables. It is important to keep in mind that the osi model is an abstract conceptualization of the processes that make the internet work, and interpreting and applying the model to the real-world internet is sometimes a subjective exercise.  The osi model is useful for helping people talk about networking equipment and protocols, determining which protocols are used by which software and hardware, and showing roughly how the internet works. But it is not a rigid step-by-step definition of how internet connections always function.  ### osi model vs. Tcp/ip model the tcp/ip model is an alternative model of how the internet works. It divides the processes involved into four layers instead of seven. Some would argue that the tcp/ip model better reflects the way the internet functions today, but the osi model is still widely referenced for understanding the internet, and both models have their strengths and weaknesses.  In the tcp/ip model, the four layers are: 4. Application layer: this corresponds, approximately, to layer 7 in the osi model. 3. Transport layer: corresponds to layer 4 in the osi model. 2. Internet layer: corresponds to layer 3 in the osi model. 1. Network access layer: combines the processes of layers 1 and 2 in the osi model.  But where are osi layers 5 and 6 in the tcp/ip model? Some sources hold that the processes at osi layers 5 and 6 either are no longer necessary in the modern internet, or actually belong to layers 7 and 4 (represented by layers 4 and 3 in the tcp/ip model).  For instance, since the tcp protocol opens and maintains sessions at osi layer 4, one could consider osi layer 5 (the session layer) to be unnecessary — and it is not represented in the tcp/ip model. Additionally, https encryption and decryption can be considered an application layer (osi layer 7 or tcp/ip layer 4) process instead of a presentation layer (osi layer 6) process.  #### what is the difference between the 'network' layer and the 'internet' layer? In the tcp/ip model, there is no network layer. The osi model network layer roughly corresponds to the tcp/ip model internet layer. In the osi model the network layer is layer 3; in the tcp/ip model the internet layer is layer 2.  In other words, the network layer and the internet layer are basically the same thing, but they come from different models of how the internet works.  What protocols are used at the network layer? A protocol is an agreed-upon way of formatting data so that two or more devices are able to communicate with and understand each other. A number of different protocols make connections, testing, routing, and encryption possible at the network layer, including:  1. Ip 2. Ipsec 3. Icmp 4. Igmp 5. Gre  #### how does cloudflare protect the network layer? Because they are exposed to the rest of the internet, network layer infrastructure is vulnerable to external attacks, especially distributed denial-of-service (ddos) attacks. Routers, switches, and other network interfaces can all be overwhelmed or compromised by malicious network traffic, and almost any of the above network protocols can be used in an attack.  Cloudflare magic transit protects networking infrastructure using the same technology that keeps millions of web properties up and running in the face of vulnerability exploits and ddos attacks. It extends the protection of cloudflare to on-premise and data center networks, keeping organizations secure from network layer attacks.  Network layer is the third layer in the osi model of computer networks. It’s main function is to transfer network packets from the source to the destination. It is involved both at the source host and the destination host. At the source, it accepts a packet from the transport layer, encapsulates it in a datagram and then deliver the packet to the data link layer so that it can further be sent to the receiver. At the destination, the datagram is decapsulated, the packet is extracted and delivered to the corresponding transport layer.   ### features :    main responsibility of network layer is to carry the data packets from the source to the destination without changing or using it.  If the packets are too large for delivery, they are fragmented i.e., broken down into smaller packets.  It decides the route to be taken by the packets to travel from the source to the destination among the multiple routes available in a network (also called as routing).  The source and destination addresses are added to the data packets inside the network layer.   The services which are offered by the network layer protocol are as follows:  * packetizing –  the process of encapsulating the data received from upper layers of the network(also called as payload) in a network layer packet at the source and decapsulating the payload from the network layer packet at the destination is known as packetizing.  The source host adds a header that contains the source and destination address and some other relevant information required by the network layer protocol to the payload received from the upper layer protocol, and delivers the packet to the data link layer.   * routing and forwarding –  these are two other services offered by the network layer. In a network, there are a number of routes available from the source to the destination. The network layer specifies has some strategies which find out the best possible route. This process is referred to as routing. There are a number of routing protocols which are used in this process and they should be run to help the routers coordinate with each other and help in establishing communication throughout the network.  Forwarding is simply defined as the action applied by each router when a packet arrives at one of its interfaces. When a router receives a packet from one of its attached networks, it needs to forward the packet to another attached network (unicast routing) or to some attached networks(in case of multicast routing).   Some of the other services which are expected from the network layer are:   * error control –  although it can be implemented in the network layer, but it is usually not preferred because the data packet in a network layer maybe fragmented at each router, which makes error checking inefficient in the network layer.   * flow control –  it regulates the amount of data a source can send without overloading the receiver. If the source produces a data at a very faster rate than the receiver can consume it, the receiver will be overloaded with data. To control the flow of data, the receiver should send a feedback to the sender to inform the latter that it is overloaded with data.  There is a lack of flow control in the design of the network layer. It does not directly provide any flow control. The datagrams are sent by the sender when they are ready, without any attention to the readiness of the receiver.     * congestion control –  congestion occurs when the number of datagrams sent by source is beyond the capacity of network or routers. This is another issue in the network layer protocol. If congestion continues, sometimes a situation may arrive where the system collapses and no datagrams are delivered. Although congestion control is indirectly implemented in network layer, but still there is a lack of congestion control in the network layer.   ### advantages of network layer services :  packetization service in network layer provides an ease of transportation of the data packets.  Packetization also eliminates single points of failure in data communication systems.  Routers present in the network layer reduce network traffic by creating collision and broadcast domains.  With the help of forwarding, data packets are transferred from one place to another in the network.   ### disadvantages of network layer services :  there is a lack of flow control in the design of the network layer.  Congestion occurs sometimes due to the presence of too many datagrams in a network which are beyond the capacity of network or the routers. Due to this, some routers may drop some of the datagrams and some important piece of information maybe lost.  Although indirectly error control is present in network layer, but there is a lack of proper error control mechanisms as due to presence of fragmented data packets, error control becomes difficult to implement.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://testtagt.azurewebsites.net/tag/",
+									"protocol": "https",
+									"host": [
+										"testtagt",
+										"azurewebsites",
+										"net"
+									],
+									"path": [
+										"tag",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Final test",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"The open systems interconnection (osi) model is a description of how the internet works. It breaks down the functions involved in sending data over the internet into seven layers. Each layer has some function that prepares the data to be sent over wires, cables, and radio waves as a series of bits. It routes the signal through different channels to the other end and works!! As the data link layer oversees the delivery of the packets between two systems on the same network; the network layer mainly ensures that each packet gets from its point of origin to the final destination.  ## the seven layers of the osi model are: 7. Application layer: data generated by and usable by software applications. The main protocol used at this layer is http. 6. Presentation layer: data is translated into a form the application can accept. Some authorities consider https encryption and decryption to take place at this layer. 5. Session layer: controls connections between computers (this can also be handled at layer 4 by the tcp protocol). 4. Transport layer: provides the means for transmitting data between the two connected parties, as well as controlling the quality of service. The main protocols used here are tcp and udp. 3. Network layer: handles the routing and sending of data between different networks. The most important protocols at this layer are ip and icmp. 2. Data link layer: handles communications between devices on the same network. If layer 3 is like the address on a piece of mail, then layer 2 is like indicating the office number or apartment number at that address. Ethernet is the protocol most used here. 1. Physical layer: packets are converted into electrical, radio, or optical pulses and transmitted as bits (the smallest possible units of information) over wires, radio waves, or cables. It is important to keep in mind that the osi model is an abstract conceptualization of the processes that make the internet work, and interpreting and applying the model to the real-world internet is sometimes a subjective exercise.  The osi model is useful for helping people talk about networking equipment and protocols, determining which protocols are used by which software and hardware, and showing roughly how the internet works. But it is not a rigid step-by-step definition of how internet connections always function.  ### osi model vs. Tcp/ip model the tcp/ip model is an alternative model of how the internet works. It divides the processes involved into four layers instead of seven. Some would argue that the tcp/ip model better reflects the way the internet functions today, but the osi model is still widely referenced for understanding the internet, and both models have their strengths and weaknesses.  In the tcp/ip model, the four layers are: 4. Application layer: this corresponds, approximately, to layer 7 in the osi model. 3. Transport layer: corresponds to layer 4 in the osi model. 2. Internet layer: corresponds to layer 3 in the osi model. 1. Network access layer: combines the processes of layers 1 and 2 in the osi model.  But where are osi layers 5 and 6 in the tcp/ip model? Some sources hold that the processes at osi layers 5 and 6 either are no longer necessary in the modern internet, or actually belong to layers 7 and 4 (represented by layers 4 and 3 in the tcp/ip model).  For instance, since the tcp protocol opens and maintains sessions at osi layer 4, one could consider osi layer 5 (the session layer) to be unnecessary — and it is not represented in the tcp/ip model. Additionally, https encryption and decryption can be considered an application layer (osi layer 7 or tcp/ip layer 4) process instead of a presentation layer (osi layer 6) process.  #### what is the difference between the 'network' layer and the 'internet' layer? In the tcp/ip model, there is no network layer. The osi model network layer roughly corresponds to the tcp/ip model internet layer. In the osi model the network layer is layer 3; in the tcp/ip model the internet layer is layer 2.  In other words, the network layer and the internet layer are basically the same thing, but they come from different models of how the internet works.  What protocols are used at the network layer? A protocol is an agreed-upon way of formatting data so that two or more devices are able to communicate with and understand each other. A number of different protocols make connections, testing, routing, and encryption possible at the network layer, including:  1. Ip 2. Ipsec 3. Icmp 4. Igmp 5. Gre  #### how does cloudflare protect the network layer? Because they are exposed to the rest of the internet, network layer infrastructure is vulnerable to external attacks, especially distributed denial-of-service (ddos) attacks. Routers, switches, and other network interfaces can all be overwhelmed or compromised by malicious network traffic, and almost any of the above network protocols can be used in an attack.  Cloudflare magic transit protects networking infrastructure using the same technology that keeps millions of web properties up and running in the face of vulnerability exploits and ddos attacks. It extends the protection of cloudflare to on-premise and data center networks, keeping organizations secure from network layer attacks.  Network layer is the third layer in the osi model of computer networks. It’s main function is to transfer network packets from the source to the destination. It is involved both at the source host and the destination host. At the source, it accepts a packet from the transport layer, encapsulates it in a datagram and then deliver the packet to the data link layer so that it can further be sent to the receiver. At the destination, the datagram is decapsulated, the packet is extracted and delivered to the corresponding transport layer.   ### features :    main responsibility of network layer is to carry the data packets from the source to the destination without changing or using it.  If the packets are too large for delivery, they are fragmented i.e., broken down into smaller packets.  It decides the route to be taken by the packets to travel from the source to the destination among the multiple routes available in a network (also called as routing).  The source and destination addresses are added to the data packets inside the network layer.   The services which are offered by the network layer protocol are as follows:  * packetizing –  the process of encapsulating the data received from upper layers of the network(also called as payload) in a network layer packet at the source and decapsulating the payload from the network layer packet at the destination is known as packetizing.  The source host adds a header that contains the source and destination address and some other relevant information required by the network layer protocol to the payload received from the upper layer protocol, and delivers the packet to the data link layer.   * routing and forwarding –  these are two other services offered by the network layer. In a network, there are a number of routes available from the source to the destination. The network layer specifies has some strategies which find out the best possible route. This process is referred to as routing. There are a number of routing protocols which are used in this process and they should be run to help the routers coordinate with each other and help in establishing communication throughout the network.  Forwarding is simply defined as the action applied by each router when a packet arrives at one of its interfaces. When a router receives a packet from one of its attached networks, it needs to forward the packet to another attached network (unicast routing) or to some attached networks(in case of multicast routing).   Some of the other services which are expected from the network layer are:   * error control –  although it can be implemented in the network layer, but it is usually not preferred because the data packet in a network layer maybe fragmented at each router, which makes error checking inefficient in the network layer.   * flow control –  it regulates the amount of data a source can send without overloading the receiver. If the source produces a data at a very faster rate than the receiver can consume it, the receiver will be overloaded with data. To control the flow of data, the receiver should send a feedback to the sender to inform the latter that it is overloaded with data.  There is a lack of flow control in the design of the network layer. It does not directly provide any flow control. The datagrams are sent by the sender when they are ready, without any attention to the readiness of the receiver.     * congestion control –  congestion occurs when the number of datagrams sent by source is beyond the capacity of network or routers. This is another issue in the network layer protocol. If congestion continues, sometimes a situation may arrive where the system collapses and no datagrams are delivered. Although congestion control is indirectly implemented in network layer, but still there is a lack of congestion control in the network layer.   ### advantages of network layer services :  packetization service in network layer provides an ease of transportation of the data packets.  Packetization also eliminates single points of failure in data communication systems.  Routers present in the network layer reduce network traffic by creating collision and broadcast domains.  With the help of forwarding, data packets are transferred from one place to another in the network.   ### disadvantages of network layer services :  there is a lack of flow control in the design of the network layer.  Congestion occurs sometimes due to the presence of too many datagrams in a network which are beyond the capacity of network or the routers. Due to this, some routers may drop some of the datagrams and some important piece of information maybe lost.  Although indirectly error control is present in network layer, but there is a lack of proper error control mechanisms as due to presence of fragmented data packets, error control becomes difficult to implement.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://d360-tag.azurewebsites.net/tag",
+									"protocol": "https",
+									"host": [
+										"d360-tag",
+										"azurewebsites",
+										"net"
+									],
+									"path": [
+										"tag"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify content",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"Multi-threaded programs may often come to a situation where multiple threads try to access the same resource and finally produce erroneous and unforeseen results. So it needs to be made sure by some synchronization method that only one thread can access the resource at a given point in time. Java provides a way of creating threads and synchronizing their tasks using synchronized blocks. Synchronized blocks in Java are marked with the synchronized keyword. A synchronized block in Java is synchronized on some object. All synchronized blocks synchronize on the same object can only have one thread executing inside them at a time. All other threads attempting to enter the synchronized block are blocked until the thread inside the synchronized block exits the block.This synchronization is implemented in Java with a concept called monitors. Only one thread can own a monitor at a given time. When a thread acquires a lock, it is said to have entered the monitor. All other threads attempting !!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://d360-tag.azurewebsites.net/tag",
+									"protocol": "https",
+									"host": [
+										"d360-tag",
+										"azurewebsites",
+										"net"
+									],
+									"path": [
+										"tag"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Production hosted",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"The home page is the first page an end-user will see when they visit your knowledge base. The Home Page Builder lets you customize your home page by adding links, changing colors, including categories from your knowledge base, and more.The home page builder comes with an intuitive interface to design a professional looking front-page to your knowledge base. You do not need any developer support to create a good looking home page. If you do not want a home page and would like to direct the user directly to the real content, you can easily turn off the home page for your knowledge base.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://d360-prod-tag.azurewebsites.net/tag",
+									"protocol": "https",
+									"host": [
+										"d360-prod-tag",
+										"azurewebsites",
+										"net"
+									],
+									"path": [
+										"tag"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Soft Limit (Jan 2023)",
+			"item": [
+				{
+					"name": "Tags",
+					"item": [
+						{
+							"name": "Tag page",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjNFMzU3MkQ1MjgyMkM5QTY0OTk5MjhENzhENEIzNDY3QUNCRjczMzYiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJQalZ5MVNnaXlhWkptU2pYalVzMFo2eV9jelkifQ.eyJuYmYiOjE2NzQxMjExNTIsImV4cCI6MTY3NDEyMjA1MiwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY3NDAyNTUzMSwiaWRwIjoibG9jYWwiLCJqdGkiOiJGOTNEMzExREI1QjYyRDY3QUM0REQ1N0QwM0Q4RTYyMCIsInNpZCI6IkEwRkQwRDAxNUI2OTY1MDBDQ0VGQjJFN0I2QTU1OUZCIiwiaWF0IjoxNjc0MTIxMTUyLCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.PFlfqdYJnNorc5LMQR8OOd5671JthgnjkJkeIaCqScrP1ouuAqMazuOXXGeaHlT6c7XllIB8BgWP92AqskgeAJhriiUGSVUWV8Kf_i39DioWfqvsVTaiy1zLWxNMfLYI1Bx9DuMSi7OtZ5WFhJ7v7l8AOqMAlRJXba9z2uFqH-PIOM5kgmYHg8_P5YeOXtXXInaG6HOySgO5aJOnZIbZ18JAaCl9VPF3mjLiJrpLCVAtlE1vXtBipZ0BidPNt4GdfZBnvFcAEJlWgyK8Bx4zHzex8ziE8r_HxTb4hAqQChDCE2TdJKBfzm2SawlyzvCFRKtWk9AMrGenFZzc6i4xvg",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "d0cb3804-a9ef-4c01-a924-c1bb87366e6c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tagName\": \"Try\",\r\n    \"description\": \"\",\r\n    \"projectId\": \"d0cb3804-a9ef-4c01-a924-c1bb87366e6c\",\r\n    \"dependencyArticleIds\": [],\r\n    \"dependencyCategoryIds\": [],\r\n    \"dependencyFileIds\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://portal.document360.net/api/Settings/addTag",
+									"protocol": "https",
+									"host": [
+										"portal",
+										"document360",
+										"net"
+									],
+									"path": [
+										"api",
+										"Settings",
+										"addTag"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tag direct",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjNFMzU3MkQ1MjgyMkM5QTY0OTk5MjhENzhENEIzNDY3QUNCRjczMzYiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJQalZ5MVNnaXlhWkptU2pYalVzMFo2eV9jelkifQ.eyJuYmYiOjE2NzQxMjExNTIsImV4cCI6MTY3NDEyMjA1MiwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY3NDAyNTUzMSwiaWRwIjoibG9jYWwiLCJqdGkiOiJGOTNEMzExREI1QjYyRDY3QUM0REQ1N0QwM0Q4RTYyMCIsInNpZCI6IkEwRkQwRDAxNUI2OTY1MDBDQ0VGQjJFN0I2QTU1OUZCIiwiaWF0IjoxNjc0MTIxMTUyLCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.PFlfqdYJnNorc5LMQR8OOd5671JthgnjkJkeIaCqScrP1ouuAqMazuOXXGeaHlT6c7XllIB8BgWP92AqskgeAJhriiUGSVUWV8Kf_i39DioWfqvsVTaiy1zLWxNMfLYI1Bx9DuMSi7OtZ5WFhJ7v7l8AOqMAlRJXba9z2uFqH-PIOM5kgmYHg8_P5YeOXtXXInaG6HOySgO5aJOnZIbZ18JAaCl9VPF3mjLiJrpLCVAtlE1vXtBipZ0BidPNt4GdfZBnvFcAEJlWgyK8Bx4zHzex8ziE8r_HxTb4hAqQChDCE2TdJKBfzm2SawlyzvCFRKtWk9AMrGenFZzc6i4xvg",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "d0cb3804-a9ef-4c01-a924-c1bb87366e6c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tagName\": \"Trying\",\r\n    \"projectId\": \"d0cb3804-a9ef-4c01-a924-c1bb87366e6c\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.document360.net/api/settings/addTagDirect",
+									"protocol": "https",
+									"host": [
+										"api",
+										"document360",
+										"net"
+									],
+									"path": [
+										"api",
+										"settings",
+										"addTagDirect"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Templates",
+					"item": [
+						{
+							"name": "Templates page",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjNFMzU3MkQ1MjgyMkM5QTY0OTk5MjhENzhENEIzNDY3QUNCRjczMzYiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJQalZ5MVNnaXlhWkptU2pYalVzMFo2eV9jelkifQ.eyJuYmYiOjE2NzQxODgyNDQsImV4cCI6MTY3NDE4OTE0NCwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY3NDEyNDQ2MSwiaWRwIjoibG9jYWwiLCJqdGkiOiI1MEY1NEJDQzdGNjM0MDg5NDBEQ0Y0QUNFRDhFRUNGMiIsInNpZCI6IjI2RkM4QjA2QkY5NkIzMzFENUFEQkQyODM4OUUzMTZBIiwiaWF0IjoxNjc0MTg4MjQ0LCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.K_S_JkYs9l_62N2l7nZH6fha2_uMPCsLnMCnXJ3fUkM5e1eW4ccirHo9xljGZZLgR3EdBnMbyRZ71I8OHoSBGcpLpLE3zHN-rppOx9vAM4arN8_62S4Vo2Pjp7yUdAXDfocaeJc_WToto7Az8rrt6aOyP0Zi0heY36fxD2tHP3ujWc1so5kBmMSxUAFjNXJJfjIIlceksGyiBlon2UqTLQCutfpDpazhl0F2sNpvAXuXyIaJ8POoei6-jw9h81KJTlDP3vsTLVjuSAVkHu7VTNxDFlBiolNZOj4DNf50tAiKg7172vhdSRH_kO6fGYQWAymwU0ISyesu3mfwMqfNgQ",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "d0cb3804-a9ef-4c01-a924-c1bb87366e6c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"articleTemplate\": {\r\n        \"title\": \"5\",\r\n        \"content\": \"1\",\r\n        \"languageCode\": \"en\",\r\n        \"contentType\": 0\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://portal.document360.net/api/articleTemplates/add-article-template/",
+									"protocol": "https",
+									"host": [
+										"portal",
+										"document360",
+										"net"
+									],
+									"path": [
+										"api",
+										"articleTemplates",
+										"add-article-template",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Duplicate",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjNFMzU3MkQ1MjgyMkM5QTY0OTk5MjhENzhENEIzNDY3QUNCRjczMzYiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJQalZ5MVNnaXlhWkptU2pYalVzMFo2eV9jelkifQ.eyJuYmYiOjE2NzQxODgyNDQsImV4cCI6MTY3NDE4OTE0NCwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY3NDEyNDQ2MSwiaWRwIjoibG9jYWwiLCJqdGkiOiI1MEY1NEJDQzdGNjM0MDg5NDBEQ0Y0QUNFRDhFRUNGMiIsInNpZCI6IjI2RkM4QjA2QkY5NkIzMzFENUFEQkQyODM4OUUzMTZBIiwiaWF0IjoxNjc0MTg4MjQ0LCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.K_S_JkYs9l_62N2l7nZH6fha2_uMPCsLnMCnXJ3fUkM5e1eW4ccirHo9xljGZZLgR3EdBnMbyRZ71I8OHoSBGcpLpLE3zHN-rppOx9vAM4arN8_62S4Vo2Pjp7yUdAXDfocaeJc_WToto7Az8rrt6aOyP0Zi0heY36fxD2tHP3ujWc1so5kBmMSxUAFjNXJJfjIIlceksGyiBlon2UqTLQCutfpDpazhl0F2sNpvAXuXyIaJ8POoei6-jw9h81KJTlDP3vsTLVjuSAVkHu7VTNxDFlBiolNZOj4DNf50tAiKg7172vhdSRH_kO6fGYQWAymwU0ISyesu3mfwMqfNgQ",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "d0cb3804-a9ef-4c01-a924-c1bb87366e6c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"articleTemplate\": {\r\n        \"title\": \"6\",\r\n        \"content\": \"5\",\r\n        \"languageCode\": \"en\",\r\n        \"contentType\": 0\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://portal.document360.net/api/articleTemplates/duplicate-article-template/",
+									"protocol": "https",
+									"host": [
+										"portal",
+										"document360",
+										"net"
+									],
+									"path": [
+										"api",
+										"articleTemplates",
+										"duplicate-article-template",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Variables",
+					"item": [
+						{
+							"name": "Variable page",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjNFMzU3MkQ1MjgyMkM5QTY0OTk5MjhENzhENEIzNDY3QUNCRjczMzYiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJQalZ5MVNnaXlhWkptU2pYalVzMFo2eV9jelkifQ.eyJuYmYiOjE2NzQxODk2NTcsImV4cCI6MTY3NDE5MDU1NywiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY3NDEyNDQ2MSwiaWRwIjoibG9jYWwiLCJqdGkiOiJCNUNGRTM4NkRDRDI1Njk5QkVDODdBRjZCOTYxQTc4QSIsInNpZCI6IjI2RkM4QjA2QkY5NkIzMzFENUFEQkQyODM4OUUzMTZBIiwiaWF0IjoxNjc0MTg5NjU3LCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.FcrjH2U4g_2DIh-7DUg-UnnRVIBS2NPS6O3igL9IAr-lawG36akKDWJxMMRBwAODp5B4_hSj4SZsmlXsEwfXXAqdTe3ga76RtOhhrhGWM9x0-pY3YjZ6Fet56ArtduDcbRuJsQYuYg48IjXrnKMfW-9eYyDCgZ9L6hdltXUF6a4l-2Y_gpNsoFoJYhnANo8iJo-7M2ZemIiBgpo9pkqX0SR8HvVFkdCe3G-Q8Cw6Px3adP7LNJIugtpsaXpQOwHojUJvZ1Os9cby8r5GB9XfOTlimvj4ZmIicNTcy430WSm24yDXu0oxv3iy5BMM82HHJN_iiQDr51SMv0Pw1i4WZQ",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "d0cb3804-a9ef-4c01-a924-c1bb87366e6c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isGlobal\": true,\r\n    \"languageCode\": \"nl\",\r\n    \"mergeCodeValue\": \"{{variable.11}}\",\r\n    \"name\": \"11\",\r\n    \"projectId\": \"d0cb3804-a9ef-4c01-a924-c1bb87366e6c\",\r\n    \"value\": \"11\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://portal.document360.net/api/settings/addVariable",
+									"protocol": "https",
+									"host": [
+										"portal",
+										"document360",
+										"net"
+									],
+									"path": [
+										"api",
+										"settings",
+										"addVariable"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Snippets",
+					"item": [
+						{
+							"name": "Snippet page",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjNFMzU3MkQ1MjgyMkM5QTY0OTk5MjhENzhENEIzNDY3QUNCRjczMzYiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJQalZ5MVNnaXlhWkptU2pYalVzMFo2eV9jelkifQ.eyJuYmYiOjE2NzQxODk2NTcsImV4cCI6MTY3NDE5MDU1NywiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY3NDEyNDQ2MSwiaWRwIjoibG9jYWwiLCJqdGkiOiJCNUNGRTM4NkRDRDI1Njk5QkVDODdBRjZCOTYxQTc4QSIsInNpZCI6IjI2RkM4QjA2QkY5NkIzMzFENUFEQkQyODM4OUUzMTZBIiwiaWF0IjoxNjc0MTg5NjU3LCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.FcrjH2U4g_2DIh-7DUg-UnnRVIBS2NPS6O3igL9IAr-lawG36akKDWJxMMRBwAODp5B4_hSj4SZsmlXsEwfXXAqdTe3ga76RtOhhrhGWM9x0-pY3YjZ6Fet56ArtduDcbRuJsQYuYg48IjXrnKMfW-9eYyDCgZ9L6hdltXUF6a4l-2Y_gpNsoFoJYhnANo8iJo-7M2ZemIiBgpo9pkqX0SR8HvVFkdCe3G-Q8Cw6Px3adP7LNJIugtpsaXpQOwHojUJvZ1Os9cby8r5GB9XfOTlimvj4ZmIicNTcy430WSm24yDXu0oxv3iy5BMM82HHJN_iiQDr51SMv0Pw1i4WZQ",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "d0cb3804-a9ef-4c01-a924-c1bb87366e6c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isGlobal\": false,\r\n    \"languageCode\": \"nl\",\r\n    \"contentValue\": \"<p>4</p>\",\r\n    \"markdown\": \"\",\r\n    \"contentType\": 1,\r\n    \"name\": \"11\",\r\n    \"mergeCodeValue\": \"{{snippet.11}}\",\r\n    \"projectId\": \"d0cb3804-a9ef-4c01-a924-c1bb87366e6c\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://portal.document360.net/api/settings/addSnippet",
+									"protocol": "https",
+									"host": [
+										"portal",
+										"document360",
+										"net"
+									],
+									"path": [
+										"api",
+										"settings",
+										"addSnippet"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Glossary",
+					"item": [
+						{
+							"name": "Add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjNFMzU3MkQ1MjgyMkM5QTY0OTk5MjhENzhENEIzNDY3QUNCRjczMzYiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJQalZ5MVNnaXlhWkptU2pYalVzMFo2eV9jelkifQ.eyJuYmYiOjE2NzQxOTU3OTIsImV4cCI6MTY3NDE5NjY5MiwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY3NDEyNDQ2MSwiaWRwIjoibG9jYWwiLCJqdGkiOiJFRjg2RTI3M0I5QjExNzI0RERBRTFBNjY3N0E2M0VGRiIsInNpZCI6IjI2RkM4QjA2QkY5NkIzMzFENUFEQkQyODM4OUUzMTZBIiwiaWF0IjoxNjc0MTk1NzkyLCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.YOXFRqQJo0pTeK9yq4_UoxufYLP687st_D-ozgkg8iXOZZJGHA-LV8phpgpTqQWCMEPofKAxGzhMaNGCj01eYg1BGxFFLgRb8h0SyfZrSM5GxFslEm_wT0Vyfy1MgMWbPqq8aAtvMjRzxB9cGWNb2LmUPf7aL2Tm9qf2PYpvKJ952TmZprtKMwBjOgdyRg4SY1SYAqVRZlrnPMCldKOuoopeaiiAfbuIKX01H_31X-iDdgWKM-WMFXNHUDXz3Uw78wYdqKEetpx0dD1FGmInRnT13C2b7eZ86YzNbiFRQZM0uZEZkB2RQiELLu-X0iuJqspwwipJLCJldaNeAOpaWg",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "d0cb3804-a9ef-4c01-a924-c1bb87366e6c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isGlobal\": false,\r\n    \"languageCode\": \"en\",\r\n    \"definition\": \"<p>15</p>\",\r\n    \"term\": \"18\",\r\n    \"projectId\": \"d0cb3804-a9ef-4c01-a924-c1bb87366e6c\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://portal.document360.net/api/Glossary",
+									"protocol": "https",
+									"host": [
+										"portal",
+										"document360",
+										"net"
+									],
+									"path": [
+										"api",
+										"Glossary"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Import",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "",
+										"type": "text"
+									},
+									{
+										"key": "project_id",
+										"value": "d0cb3804-a9ef-4c01-a924-c1bb87366e6c",
+										"type": "text"
+									}
+								]
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Team accounts & Readers Bulk Select",
+			"item": [
+				{
+					"name": "Additional info",
+					"item": [
+						{
+							"name": "QA Show additional info",
+							"item": [
+								{
+									"name": "Customer V1 Add Team Account",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "api_token",
+												"value": "OBBt3Wo9S/fCC3ioJTustaagaTegcI0RP2x5pxAxvKONrXW2R9YEYxh/4YZc1lfLGQ5pZ5/tylEcZWmSFfklICcFDznJHDndnEdo89gNOsrkAm2wNg/v2SxoktgF3vXilkzwHJ2NhCbdhJeR+GqmCA==",
+												"type": "text"
+											},
+											{
+												"key": "projectid",
+												"value": "48e9e76b-3499-4925-a49c-45d7fa82fecc",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email_id\": \"celtiamary1@gmail.com\",\r\n    \"user_role\": \"1\",\r\n    \"user_id\": \"6392c93e-24c0-4894-89d3-4d88978052b7\",\r\n    \"is_sso_user\": false,\r\n    \"skip_sso_invitation_email\": true\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://apihub.document360.info/v1/Teams",
+											"protocol": "https",
+											"host": [
+												"apihub",
+												"document360",
+												"info"
+											],
+											"path": [
+												"v1",
+												"Teams"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Customer V2 Add Team Account",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "api_token",
+												"value": "OBBt3Wo9S/fCC3ioJTustfyqo0wEb/OK1fSRedrkp+qZkVTA4wqqD2uar8wI0CHAzt9OtTwEPfXKOODPYwuVFRiNO6ujaaAKlIcK152v7NjRP7NwqlryYgoVRb2MxsDqFKDK02AMCT05x48JdCHgHw==",
+												"type": "text"
+											},
+											{
+												"key": "projectid",
+												"value": "dfef7f22-fee4-4899-a866-3457ae4818ab",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email_id\": \"jseqaprob@gmail.com\",\r\n    \"invited_by\": \"6ed7cc53-7d29-4872-a9e1-dc02a1d526e0\",\r\n    \"is_sso_user\": false,\r\n    \"skip_sso_invitation_email\": false,\r\n    \"associated_portal_role_id\": \"c1b8ae08-78d5-41d9-b3c4-3b0892b05ca8\",\r\n    \"content_permissions\": [\r\n        {\r\n            \"associated_content_role_id\": \"926c7a3c-0fe8-40c8-a96f-f02c95a12d5c\",\r\n            \"access_scope\": {\r\n                \"access_level\": 4,                \r\n                \"languages\": [\r\n                    {\r\n                        \"project_version_id\": \"6d30d7b9-b376-45cb-a94c-21e20c5e36f3\",\r\n                        \"language_code\": \"nl\"\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ],\r\n    \"associated_groups\": [\r\n        \"f480a7e2-2504-4403-bcba-47d245d9acea\"\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://apihub.document360.info/v2/Teams",
+											"protocol": "https",
+											"host": [
+												"apihub",
+												"document360",
+												"info"
+											],
+											"path": [
+												"v2",
+												"Teams"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Customer V1 Add Reader",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "api_token",
+												"value": "OBBt3Wo9S/fCC3ioJTustaagaTegcI0RP2x5pxAxvKONrXW2R9YEYxh/4YZc1lfLGQ5pZ5/tylEcZWmSFfklICcFDznJHDndnEdo89gNOsrkAm2wNg/v2SxoktgF3vXilkzwHJ2NhCbdhJeR+GqmCA==",
+												"type": "text"
+											},
+											{
+												"key": "projectid",
+												"value": "48e9e76b-3499-4925-a49c-45d7fa82fecc",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email_id\": \"jseqa2020@gmail.com\",\r\n    \"associated_reader_groups\": [],\r\n    \"access_scope\": {\r\n        \"access_level\": 2,\r\n        \"project_versions\": [\r\n            \"2abad98b-d766-4507-8da9-73aee429d887\"\r\n        ]\r\n    },\r\n    \"is_sso_user\": false,\r\n    \"skip_sso_invitation_email\": false,\r\n    \"user_id\": \"6392c93e-24c0-4894-89d3-4d88978052b7\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://apihub.document360.info/v1/Readers",
+											"protocol": "https",
+											"host": [
+												"apihub",
+												"document360",
+												"info"
+											],
+											"path": [
+												"v1",
+												"Readers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Customer V2 Add Reader",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "api_token",
+												"value": "OBBt3Wo9S/fCC3ioJTustbMwnZkl9F8EOVRutKZWie4SOf447RxI7g+w8Uot+tUm0SAWZgdrH0xQBObLV/roit200CIL9KYHj6A/MrUNLY8cuUWKDyyn5sCwtCjTVm53VfPKuUEcqeSt1xHXnbyByg==",
+												"type": "text"
+											},
+											{
+												"key": "projectid",
+												"value": "69672790-e87e-440e-9c66-f7c1442ca26c",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"first_name\": \"string\",\r\n    \"last_name\": \"string\",\r\n    \"email_id\": \"shreegayathri.govindarajan@kovai.co\",\r\n    \"associated_reader_groups\": [\r\n        \"b7319e6c-45fa-4593-9506-940de457e5d9\"\r\n    ],\r\n    \"access_scope\": {\r\n        \"access_level\": 3      \r\n    },\r\n    \"is_sso_user\": false,\r\n    \"skip_sso_invitation_email\": true,\r\n    \"invited_by\": \"6ed7cc53-7d29-4872-a9e1-dc02a1d526e0\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://apihub.document360.info/v2/Readers",
+											"protocol": "https",
+											"host": [
+												"apihub",
+												"document360",
+												"info"
+											],
+											"path": [
+												"v2",
+												"Readers"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "QA SSO",
+							"item": [
+								{
+									"name": "Customer SSO V1 Add Team Account",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "api_token",
+												"value": "OBBt3Wo9S/fCC3ioJTustbMwnZkl9F8EOVRutKZWie4SOf447RxI7g+w8Uot+tUm0SAWZgdrH0xQBObLV/roit200CIL9KYHj6A/MrUNLY8cuUWKDyyn5sCwtCjTVm53VfPKuUEcqeSt1xHXnbyByg==",
+												"type": "text"
+											},
+											{
+												"key": "projectid",
+												"value": "69672790-e87e-440e-9c66-f7c1442ca26c",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email_id\": \"opmtkrmqccg@cutradition.com\",\r\n    \"user_role\": \"2\",\r\n    \"user_id\": \"142f29d1-1291-4e5d-9e3a-faa9bc6960b2\",\r\n    \"is_sso_user\": true,\r\n    \"skip_sso_invitation_email\": true\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://apihub.document360.info/v1/Teams",
+											"protocol": "https",
+											"host": [
+												"apihub",
+												"document360",
+												"info"
+											],
+											"path": [
+												"v1",
+												"Teams"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Customer SSO V2 Add Team Account Copy",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "api_token",
+												"value": "OBBt3Wo9S/fCC3ioJTustcim+D74D0y/6aX5tiaBqxb5GSsSAd9Zn6vbdLoBd8Okk0pBwvgNHgIL5g3/MX6tR3/p6zJKl/pURe2MA4BpxOH2cK2ufwz6F0h1iT7GVnlHZuOsx67iRNGvW8kOElmYqg==",
+												"type": "text"
+											},
+											{
+												"key": "projectid",
+												"value": "8891f60e-d342-49f5-b756-9b04a1be5eab",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email_id\": \"celtiamary1@gmail.com\",\r\n    \"invited_by\": \"7a806e39-b1bd-418f-893e-cfc198b328cf\",\r\n    \"is_sso_user\": true,\r\n    \"skip_sso_invitation_email\": false,\r\n    \"associated_portal_role_id\": \"64ced5a8-c2b9-4421-821a-4e32bdfaaecc\",\r\n    \"content_permissions\": [\r\n        {\r\n            \"associated_content_role_id\": \"88ec9ab0-2355-46b6-8eed-b3ce2cd870a8\"\r\n        }\r\n    ],\r\n    \"associated_groups\": [\r\n        \"a72f32c7-002f-4627-98fe-d587bc17409d\"\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://apihub.document360.info/v2/Teams",
+											"protocol": "https",
+											"host": [
+												"apihub",
+												"document360",
+												"info"
+											],
+											"path": [
+												"v2",
+												"Teams"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Customer SSO V1 Add Reader Copy",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "api_token",
+												"value": "JomJwRk+hBvfkq67MXMmlEw+bqZ4PJn7JpC29hsiei6md5vtantbORnOfMCDFFyF08RkU9mfDdvXKS34RZdHxxsr8u9MUUe+2mBDaIjONI7ul1BI7F6dNagy0vySb6vmeeiXks/o9QI0YQBtisbcxQ==",
+												"type": "text"
+											},
+											{
+												"key": "projectid",
+												"value": "12d91623-0368-4c6f-a9e2-5f30bc5a1a59",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email_id\": \"ihmyisiwcsc@cutradition.com\",\r\n    \"associated_reader_groups\": [\r\n        \"a553186a-ecea-47e9-a70f-21aaa489b056\"\r\n    ],\r\n    \"access_scope\": {\r\n        \"access_level\": 2,\r\n        \"project_versions\": [\r\n            \"1c2569f6-6a3d-480b-9673-3aaa5fa1e031\"\r\n        ]\r\n    },\r\n    \"is_sso_user\": true,\r\n    \"skip_sso_invitation_email\": true,\r\n    \"user_id\": \"142f29d1-1291-4e5d-9e3a-faa9bc6960b2\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://apihub.document360.info/v1/Readers",
+											"protocol": "https",
+											"host": [
+												"apihub",
+												"document360",
+												"info"
+											],
+											"path": [
+												"v1",
+												"Readers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Customer SSO V2 Add Reader Copy",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "api_token",
+												"value": "OBBt3Wo9S/fCC3ioJTustcim+D74D0y/6aX5tiaBqxb5GSsSAd9Zn6vbdLoBd8Okk0pBwvgNHgIL5g3/MX6tR3/p6zJKl/pURe2MA4BpxOH2cK2ufwz6F0h1iT7GVnlHZuOsx67iRNGvW8kOElmYqg==",
+												"type": "text"
+											},
+											{
+												"key": "projectid",
+												"value": "8891f60e-d342-49f5-b756-9b04a1be5eab",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"first_name\": \"string\",\r\n    \"last_name\": \"string\",\r\n    \"email_id\": \"autumn.fall@foxiomail.com\",\r\n    \"associated_reader_groups\": [],\r\n    \"access_scope\": {\r\n        \"access_level\": 3      \r\n    },\r\n    \"is_sso_user\": true,\r\n    \"skip_sso_invitation_email\": false,\r\n    \"invited_by\": \"7a806e39-b1bd-418f-893e-cfc198b328cf\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://apihub.document360.info/v2/Readers",
+											"protocol": "https",
+											"host": [
+												"apihub",
+												"document360",
+												"info"
+											],
+											"path": [
+												"v2",
+												"Readers"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Show additional information",
+					"item": [
+						{
+							"name": "Customer V1 Add Team Account",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_token",
+										"value": "OBBt3Wo9S/fCC3ioJTustZ543Od9bEuGHGES2wMyIs+11OimTum8HhjdmNZyryrk4zzGIeLeSBbGOYCDRkt+dHaAzIX7nMRVlIh3kchb94wRXpfm6igs3Y1znUNGia4pUnJh8wKn/F/V3ZjsXVpWGA==",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "d0cb3804-a9ef-4c01-a924-c1bb87366e6c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email_id\": \"celtiamary3@gmail.com\",\r\n    \"user_role\": \"1\",\r\n    \"user_id\": \"12fa1fe9-ed12-4b3f-8b54-6cef78e73d80\",\r\n    \"is_sso_user\": false,\r\n    \"skip_sso_invitation_email\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apihub.document360.net/v1/Teams",
+									"protocol": "https",
+									"host": [
+										"apihub",
+										"document360",
+										"net"
+									],
+									"path": [
+										"v1",
+										"Teams"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Customer V2 Add Team Account",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_token",
+										"value": "OBBt3Wo9S/fCC3ioJTustTnPrcOZmFdRo73Mh6RWzz+dtUjgsYCTtScdVqLzDPW4uAoLQDb/5LMPQWBpyx0OOMW6LVLI+3t7yd9QeBCf7uj1SByOmDYukb8CpjZrkdXNpPR6ERdU9FYCKadUMkWiNg==",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "e3c1750c-61b4-4985-b974-871ea253ba5d",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email_id\": \"celtiamary3@gmail.com\",\r\n    \"invited_by\": \"517c19cf-ff39-43e0-885e-f61f967b7174\",\r\n    \"is_sso_user\": false,\r\n    \"skip_sso_invitation_email\": false,\r\n    \"associated_portal_role_id\": \"c1b8ae08-78d5-41d9-b3c4-3b0892b05ca8\",\r\n    \"content_permissions\": [\r\n        {\r\n            \"associated_content_role_id\": \"926c7a3c-0fe8-40c8-a96f-f02c95a12d5c\",\r\n            \"access_scope\": {\r\n                \"access_level\": 4,                \r\n                \"languages\": [\r\n                    {\r\n                        \"project_version_id\": \"e24d8e4d-9aea-4e9f-b63e-c00ac2d760aa\",\r\n                        \"language_code\": \"nl\"\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ],\r\n    \"associated_groups\": [\r\n        \"4091f0cb-39ff-4256-a3dd-3f287040efd0\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apihub.document360.net/v2/Teams",
+									"protocol": "https",
+									"host": [
+										"apihub",
+										"document360",
+										"net"
+									],
+									"path": [
+										"v2",
+										"Teams"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Customer V1 Add Reader",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_token",
+										"value": "OBBt3Wo9S/fCC3ioJTustZ543Od9bEuGHGES2wMyIs+11OimTum8HhjdmNZyryrk4zzGIeLeSBbGOYCDRkt+dHaAzIX7nMRVlIh3kchb94wRXpfm6igs3Y1znUNGia4pUnJh8wKn/F/V3ZjsXVpWGA==",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "d0cb3804-a9ef-4c01-a924-c1bb87366e6c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email_id\": \"jseqa2020a@gmail.com\",\r\n    \"associated_reader_groups\": [],\r\n    \"access_scope\": {\r\n        \"access_level\": 2,\r\n        \"project_versions\": [\r\n            \"da94906b-5eff-45a7-b75a-05835d23ef5a\"\r\n        ]\r\n    },\r\n    \"is_sso_user\": false,\r\n    \"skip_sso_invitation_email\": false,\r\n    \"user_id\": \"2a3ef3e2-b41b-41f4-91fb-e2ac3481fba6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apihub.document360.net/v1/Readers",
+									"protocol": "https",
+									"host": [
+										"apihub",
+										"document360",
+										"net"
+									],
+									"path": [
+										"v1",
+										"Readers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Customer V2 Add Reader",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_token",
+										"value": "OBBt3Wo9S/fCC3ioJTustTnPrcOZmFdRo73Mh6RWzz+dtUjgsYCTtScdVqLzDPW4uAoLQDb/5LMPQWBpyx0OOMW6LVLI+3t7yd9QeBCf7uj1SByOmDYukb8CpjZrkdXNpPR6ERdU9FYCKadUMkWiNg==",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "e3c1750c-61b4-4985-b974-871ea253ba5d",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"string\",\r\n    \"last_name\": \"string\",\r\n    \"email_id\": \"jseqa2020b@gmail.com\",\r\n    \"associated_reader_groups\": [\r\n        \"c47f70aa-5544-45f6-ade8-c9ee7005c1d4\"\r\n    ],\r\n    \"access_scope\": {\r\n        \"access_level\": 3      \r\n    },\r\n    \"is_sso_user\": false,\r\n    \"skip_sso_invitation_email\": true,\r\n    \"invited_by\": \"517c19cf-ff39-43e0-885e-f61f967b7174\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apihub.document360.net/v2/Readers",
+									"protocol": "https",
+									"host": [
+										"apihub",
+										"document360",
+										"net"
+									],
+									"path": [
+										"v2",
+										"Readers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SSO",
+					"item": [
+						{
+							"name": "Customer SSO V1 Add Team Account",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_token",
+										"value": "OBBt3Wo9S/fCC3ioJTustdMlkXWnU3zweA2heY5Ft3tasL+pk7Rj7dBTuvOyjKYqwjbtt51EwPk13FeKd5F/e4VHFMl3hF6VCdIVjbx5tkeEyTxKZcTyEK02kKAS4JsAnM8hZjEguBBdKSX6sgbZYw==",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "2c1d02a8-e399-494e-9187-c02c1d8aa097",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email_id\": \"celtiamary4@gmail.com\",\r\n    \"user_role\": \"2\",\r\n    \"user_id\": \"5a9d9a00a264f2292c366ee3\",\r\n    \"is_sso_user\": true,\r\n    \"skip_sso_invitation_email\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apihub.document360.net/v1/Teams",
+									"protocol": "https",
+									"host": [
+										"apihub",
+										"document360",
+										"net"
+									],
+									"path": [
+										"v1",
+										"Teams"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Customer SSO V2 Add Team Account Copy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_token",
+										"value": "OBBt3Wo9S/fCC3ioJTustengrIHxc5qxKC29laITx48ORksdeiuIsjEDuYa/5PZS8Z9WnHbBUoGkh26I91HoHOdjSG8hVQN4JmMrh7hku4BofoIhZk2gSMWfeo5xBrQgFIu66exiY4SOfloDxAc+5A==",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "dab4460d-2efd-46b2-af60-b67388c9e1d1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email_id\": \"celtiamary4@gmail.com\",\r\n    \"invited_by\": \"517c19cf-ff39-43e0-885e-f61f967b7174\",\r\n    \"is_sso_user\": true,\r\n    \"skip_sso_invitation_email\": false,\r\n    \"associated_portal_role_id\": \"264485a9-088e-49bf-b33e-a417e9fa01e5\",\r\n    \"content_permissions\": [\r\n        {\r\n            \"associated_content_role_id\": \"62810dc1-2d21-422e-bdfb-c3daebf91dd3\",\r\n            \"access_scope\": {\r\n                \"access_level\": 4,                \r\n                \"languages\": [\r\n                    {\r\n                        \"project_version_id\": \"ba75fd6a-5c27-4545-94fe-a8a3dbefe88d\",\r\n                        \"language_code\": \"nl\"\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ],\r\n    \"associated_groups\": [\r\n        \"aded307e-5058-4d2f-8c95-a73aef7cb5c1\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apihub.document360.net/v2/Teams",
+									"protocol": "https",
+									"host": [
+										"apihub",
+										"document360",
+										"net"
+									],
+									"path": [
+										"v2",
+										"Teams"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Customer SSO V1 Add Reader Copy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_token",
+										"value": "OBBt3Wo9S/fCC3ioJTustdMlkXWnU3zweA2heY5Ft3tasL+pk7Rj7dBTuvOyjKYqwjbtt51EwPk13FeKd5F/e4VHFMl3hF6VCdIVjbx5tkeEyTxKZcTyEK02kKAS4JsAnM8hZjEguBBdKSX6sgbZYw==",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "2c1d02a8-e399-494e-9187-c02c1d8aa097",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email_id\": \"jseqa2020a@gmail.com\",\r\n    \"associated_reader_groups\": [\r\n        \"2e1889af-1861-48be-982b-20e9a21c8c2a\"\r\n    ],\r\n    \"access_scope\": {\r\n        \"access_level\": 2,\r\n        \"project_versions\": [\r\n            \"cf444b20-626a-4a25-b4d4-13781e8bf636\"\r\n        ]\r\n    },\r\n    \"is_sso_user\": true,\r\n    \"skip_sso_invitation_email\": true,\r\n    \"user_id\": \"5a9d9a00a264f2292c366ee3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apihub.document360.net/v1/Readers",
+									"protocol": "https",
+									"host": [
+										"apihub",
+										"document360",
+										"net"
+									],
+									"path": [
+										"v1",
+										"Readers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Customer SSO V2 Add Reader Copy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_token",
+										"value": "OBBt3Wo9S/fCC3ioJTustengrIHxc5qxKC29laITx48ORksdeiuIsjEDuYa/5PZS8Z9WnHbBUoGkh26I91HoHOdjSG8hVQN4JmMrh7hku4BofoIhZk2gSMWfeo5xBrQgFIu66exiY4SOfloDxAc+5A==",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "dab4460d-2efd-46b2-af60-b67388c9e1d1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"string\",\r\n    \"last_name\": \"string\",\r\n    \"email_id\": \"jseqa2020b@gmail.com\",\r\n    \"associated_reader_groups\": [\r\n        \"d44049bf-9674-452f-94e2-1b8cd2a89ae0\"\r\n    ],\r\n    \"access_scope\": {\r\n        \"access_level\": 3      \r\n    },\r\n    \"is_sso_user\": true,\r\n    \"skip_sso_invitation_email\": false,\r\n    \"invited_by\": \"517c19cf-ff39-43e0-885e-f61f967b7174\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apihub.document360.net/v2/Readers",
+									"protocol": "https",
+									"host": [
+										"apihub",
+										"document360",
+										"net"
+									],
+									"path": [
+										"v2",
+										"Readers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Skip Invitation for SSO users",
+			"item": [
+				{
+					"name": "Development environment",
+					"item": [
+						{
+							"name": "AddTeamAccount",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjA1MjU3OTQwRTc4MUIwQkI2QjRBNTg5NDlFNDk2N0EyODMyOTA2QzEiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJCU1Y1UU9lQnNMdHJTbGlVbmtsbm9vTXBCc0UifQ.eyJuYmYiOjE2NDQ1NTM3MDQsImV4cCI6MTY0NDU1NDYwNCwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY0NDU1MzY0MCwiaWRwIjoibG9jYWwiLCJqdGkiOiIzOTA2NTA0N0U2QjMyRjI3RjIwMzdERjAxRjdDQUU2MSIsInNpZCI6IkM2RDMxREIzMkJBOTU0RThBQjhEMUVCQzJFMDBBMDhBIiwiaWF0IjoxNjQ0NTUzNzA0LCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.leA8QZ4nF1ergAQea6AZEgIOqhTgH5EUiyjfSIhItdR9z64oc-Nk3i9FaMjOU98znwIouTKiWfT4DuGqmxwqbxwdJaTHTPnNsogkV2VbqOOnr3oC9zIj9UMEMNWurWXV4zO_Xv0VC95LO7wNMwypDqv_iNywmbe26hR8QjQQZHVChM-a6-f4Ya1lW2f4sNUskioelBGEfZsQZb6E_99HulBTUqgWa6nKx515RFvoL8puYSBUzKU8zcWw2GWcFXQR0Hhd7uw9EqXO6UxlMrTEk4BQwIMJV0RltkX64qxjhbcGf5jddRALC6wV-QU47QyGZlcKZFH1eZ9u0pLmbWtbMQ",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "2c1d02a8-e399-494e-9187-c02c1d8aa097",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contentRolePermissionMappings\": [\r\n        {\r\n            \"accessScope\": {\r\n                \"accessLevel\": 3\r\n            },\r\n            \"associatedContentRoleId\": \"62810dc1-2d21-422e-bdfb-c3daebf91dd3\"\r\n        }\r\n    ],\r\n    \"emailId\": \"celtiamary1@gmail.com\",\r\n    \"firstName\": \"\",\r\n    \"lastName\": \"\",\r\n    \"skipSsoInvitationEmail\": true,\r\n    \"associatedGroups\": [],\r\n    \"userType\": \"TeamAccount\",\r\n    \"isInviteSSOUser\": true,\r\n    \"associatedPortalRoleId\": \"64ced5a8-c2b9-4421-821a-4e32bdfaaecc\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.document360.net/api/Security/add-team-account",
+									"protocol": "https",
+									"host": [
+										"api",
+										"document360",
+										"net"
+									],
+									"path": [
+										"api",
+										"Security",
+										"add-team-account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddReader",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjA1MjU3OTQwRTc4MUIwQkI2QjRBNTg5NDlFNDk2N0EyODMyOTA2QzEiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJCU1Y1UU9lQnNMdHJTbGlVbmtsbm9vTXBCc0UifQ.eyJuYmYiOjE2NDQ1NTU0NDksImV4cCI6MTY0NDU1NjM0OSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY0NDU1MzY0MCwiaWRwIjoibG9jYWwiLCJqdGkiOiI2REZBN0Y2ODkxRDczNUQ5MkI3NUQzQzA5QTdFQzY2RSIsInNpZCI6IkM2RDMxREIzMkJBOTU0RThBQjhEMUVCQzJFMDBBMDhBIiwiaWF0IjoxNjQ0NTU1NDQ5LCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.0wFhWJa7BdUz71J0HlwsgYU0FtntSFiuMfoKpbNHqMLr_ingybkIqX_GGImGo-C-EjVJuwp2jQne2APcBMtKD-xeWTSTNoxtL2j-abY-glDmGPof_z-BKCE-FK2ZBJcpmCr7w7FXZE5C2htz0hnt3DhEnRX7SdgLqbuauFgsiHjyfIelzivoyLDRJvWbiitcASxDt2ttUskcoauJVbC5nGFOEWCo082khsQufmXhA4t1U5RFZuKwtFBGgMlqB6ykJbrqnlSb0lA_jFOmMrFTvLMs9OhgA9tmEicoFieuanNImit4MW6-cNWQKvVOiBabMYQ-hTsxIbjPxAUpAZy6sw",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "2c1d02a8-e399-494e-9187-c02c1d8aa097",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"string\",\r\n    \"lastName\": \"string\",\r\n    \"emailId\": \"celtiamary1@gmail.com\",\r\n    \"accessScope\": {\r\n        \"accessLevel\": 3\r\n    },\r\n    \"associatedReaderGroups\": [],\r\n    \"isInviteSsoUser\": true,\r\n    \"ssoUserType\": 1,\r\n    \"invitedBy\": \"12fa1fe9-ed12-4b3f-8b54-6cef78e73d80\",\r\n    \"lastLoginAt\": \"2022-02-03T06:11:59.387Z\",\r\n    \"skipSsoInvitationEmail\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.document360.net/api/Security/readers",
+									"protocol": "https",
+									"host": [
+										"api",
+										"document360",
+										"net"
+									],
+									"path": [
+										"api",
+										"Security",
+										"readers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ImportTeamMember",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjA1MjU3OTQwRTc4MUIwQkI2QjRBNTg5NDlFNDk2N0EyODMyOTA2QzEiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJCU1Y1UU9lQnNMdHJTbGlVbmtsbm9vTXBCc0UifQ.eyJuYmYiOjE2NDM4NzE2MDQsImV4cCI6MTY0Mzg3MjUwNCwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY0Mzg2Njg1NywiaWRwIjoibG9jYWwiLCJqdGkiOiI5MUMwQUI4MTMxMEJEMkU2QUYzOTA3NzY5NEE1QUM1RiIsInNpZCI6IkY0NUE3MjkxMTBFODVERDhEMkQwOEMyQ0I4NUMwNjU5IiwiaWF0IjoxNjQzODcxNjA0LCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.PvU68s9ztpnKttBYaDogss3x6ljiZV0HxtY1t2_wHidW7vJNgSlIf9qveIjF_3Uvln_rJCa5vqOlcvnlk0APoTO7KuxXBwXf70WuEUQbFySouKlVVH9WZM34p2gS8BxBY2uz5M2D4EwRtjSmqN_tgFZligxaFNcV0_CH3k8zBmo82N2O9qXr8W7-RD8aWCc9iDTW2e3aUxU4lz0XmuuHEIwWcnuws-mdTZpUiYODJOSEJTN0JD_Gt7-AvGC9vJ3QT7xM8V4TXmfHG5RTSXsMXiJ0ybLp9TJ5BOYaRt3ymS_cUprXaQgT3Jsyvp8vOqzEGUyrdk9kn7PoLfvIB14FFw",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "2c1d02a8-e399-494e-9187-c02c1d8aa097",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"projectId\": \"2c1d02a8-e399-494e-9187-c02c1d8aa097\",\r\n    \"userList\": [\r\n        {\r\n            \"email\": \"celtiamary1@gmail.com\",\r\n            \"firstName\": \"\",\r\n            \"lastName\": \"\"\r\n        }\r\n    ],\r\n    \"userType\": \"TeamAccount\",\r\n    \"invitedBy\": \"Celtia Mary A\",\r\n    \"taskId\": \"string\",\r\n    \"isInviteSSOUser\": true,\r\n    \"associatedPortalRoleId\": \"64ced5a8-c2b9-4421-821a-4e32bdfaaecc\",\r\n    \"associatedContentRoleId\": \"926c7a3c-0fe8-40c8-a96f-f02c95a12d5c\",\r\n    \"additionalTeamAccounts\": 0,\r\n    \"paymentIntentId\": \"\",\r\n    \"excessTeamAccountCount\": 0,\r\n    \"skipSsoInvitationEmail\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.document360.net//api/settings/ImportTeamMember",
+									"protocol": "https",
+									"host": [
+										"api",
+										"document360",
+										"net"
+									],
+									"path": [
+										"",
+										"api",
+										"settings",
+										"ImportTeamMember"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ImportReader",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjA1MjU3OTQwRTc4MUIwQkI2QjRBNTg5NDlFNDk2N0EyODMyOTA2QzEiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJCU1Y1UU9lQnNMdHJTbGlVbmtsbm9vTXBCc0UifQ.eyJuYmYiOjE2NDQ1NTY1NjIsImV4cCI6MTY0NDU1NzQ2MiwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY0NDU1MzY0MCwiaWRwIjoibG9jYWwiLCJqdGkiOiJEQ0IwQUEyNUNEODk5REJFQkFBQjFEQkVERTg2NTZDOSIsInNpZCI6IkM2RDMxREIzMkJBOTU0RThBQjhEMUVCQzJFMDBBMDhBIiwiaWF0IjoxNjQ0NTU2NTYyLCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.3bMIb0cJp09ari8DCPkSx177qWFGG3K2NN0Sd0J_L6eL25SpQmXdb3yb2yQ9VuQIJ_ogPRuAZZqW37Wsjx_fnUv7Ju6Tb3BCfdduZibCMau1bo0BUDkBaIyzYcvs_ZwYsZsj5UWzI5k11Xv50SjM6Q0l7X-IJTnAEhm4jIrJ3LEjFb2bWSWeCsHlxmJInWkp6m-DmTxXg_qHZimmZG5y9BK2HndmPYkPTjlAAIyGFd-4S1Z33c5Y9kt_wb35M1bBD03SbH-q2oMsO1n44uhqhtm4eNv1Rf9wM1xR3Fxdp4gaz2K-ecL2IVoQx7a_eTGoXEW2eN4Ia9pU9P9t8yb3yw",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "2c1d02a8-e399-494e-9187-c02c1d8aa097",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"projectId\": \"2c1d02a8-e399-494e-9187-c02c1d8aa097\",\r\n    \"userList\": [\r\n        {\r\n            \"email\": \"celtiamary1@gmail.com\",\r\n            \"firstName\": \"\",\r\n            \"lastName\": \"\"\r\n        }\r\n    ],\r\n    \"userType\": \"Reader\",\r\n    \"invitedBy\": \"Celtia Mary A\",\r\n    \"taskId\": \"string\",\r\n    \"isInviteSSOUser\": true,\r\n    \"associatedPortalRoleId\": \"\",\r\n    \"associatedContentRoleId\": \"\",\r\n    \"additionalTeamAccounts\": 0,\r\n    \"paymentIntentId\": \"\",\r\n    \"excessTeamAccountCount\": 0,\r\n    \"skipSsoInvitationEmail\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.document360.net//api/settings/ImportReader",
+									"protocol": "https",
+									"host": [
+										"api",
+										"document360",
+										"net"
+									],
+									"path": [
+										"",
+										"api",
+										"settings",
+										"ImportReader"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "QA environment",
+					"item": [
+						{
+							"name": "AddTeamAccount",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjA1MjU3OTQwRTc4MUIwQkI2QjRBNTg5NDlFNDk2N0EyODMyOTA2QzEiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJCU1Y1UU9lQnNMdHJTbGlVbmtsbm9vTXBCc0UifQ.eyJuYmYiOjE2NDQ1NTM3MDQsImV4cCI6MTY0NDU1NDYwNCwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY0NDU1MzY0MCwiaWRwIjoibG9jYWwiLCJqdGkiOiIzOTA2NTA0N0U2QjMyRjI3RjIwMzdERjAxRjdDQUU2MSIsInNpZCI6IkM2RDMxREIzMkJBOTU0RThBQjhEMUVCQzJFMDBBMDhBIiwiaWF0IjoxNjQ0NTUzNzA0LCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.leA8QZ4nF1ergAQea6AZEgIOqhTgH5EUiyjfSIhItdR9z64oc-Nk3i9FaMjOU98znwIouTKiWfT4DuGqmxwqbxwdJaTHTPnNsogkV2VbqOOnr3oC9zIj9UMEMNWurWXV4zO_Xv0VC95LO7wNMwypDqv_iNywmbe26hR8QjQQZHVChM-a6-f4Ya1lW2f4sNUskioelBGEfZsQZb6E_99HulBTUqgWa6nKx515RFvoL8puYSBUzKU8zcWw2GWcFXQR0Hhd7uw9EqXO6UxlMrTEk4BQwIMJV0RltkX64qxjhbcGf5jddRALC6wV-QU47QyGZlcKZFH1eZ9u0pLmbWtbMQ",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "a664b424-dcb0-49b7-9870-73e25850fdf8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contentRolePermissionMappings\": [\r\n        {\r\n            \"accessScope\": {\r\n                \"accessLevel\": 3\r\n            },\r\n            \"associatedContentRoleId\": \"926c7a3c-0fe8-40c8-a96f-f02c95a12d5c\"\r\n        }\r\n    ],\r\n    \"emailId\": \"\",\r\n    \"firstName\": \"\",\r\n    \"lastName\": \"\",\r\n    \"skipSsoInvitationEmail\": true,\r\n    \"associatedGroups\": [],\r\n    \"userType\": \"TeamAccount\",\r\n    \"isInviteSSOUser\": true,\r\n    \"associatedPortalRoleId\": \"264485a9-088e-49bf-b33e-a417e9fa01e5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.document360.info/api/Security/add-team-account",
+									"protocol": "https",
+									"host": [
+										"api",
+										"document360",
+										"info"
+									],
+									"path": [
+										"api",
+										"Security",
+										"add-team-account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddReader",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjA1MjU3OTQwRTc4MUIwQkI2QjRBNTg5NDlFNDk2N0EyODMyOTA2QzEiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJCU1Y1UU9lQnNMdHJTbGlVbmtsbm9vTXBCc0UifQ.eyJuYmYiOjE2NDQ1NTU0NDksImV4cCI6MTY0NDU1NjM0OSwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY0NDU1MzY0MCwiaWRwIjoibG9jYWwiLCJqdGkiOiI2REZBN0Y2ODkxRDczNUQ5MkI3NUQzQzA5QTdFQzY2RSIsInNpZCI6IkM2RDMxREIzMkJBOTU0RThBQjhEMUVCQzJFMDBBMDhBIiwiaWF0IjoxNjQ0NTU1NDQ5LCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.0wFhWJa7BdUz71J0HlwsgYU0FtntSFiuMfoKpbNHqMLr_ingybkIqX_GGImGo-C-EjVJuwp2jQne2APcBMtKD-xeWTSTNoxtL2j-abY-glDmGPof_z-BKCE-FK2ZBJcpmCr7w7FXZE5C2htz0hnt3DhEnRX7SdgLqbuauFgsiHjyfIelzivoyLDRJvWbiitcASxDt2ttUskcoauJVbC5nGFOEWCo082khsQufmXhA4t1U5RFZuKwtFBGgMlqB6ykJbrqnlSb0lA_jFOmMrFTvLMs9OhgA9tmEicoFieuanNImit4MW6-cNWQKvVOiBabMYQ-hTsxIbjPxAUpAZy6sw",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "a664b424-dcb0-49b7-9870-73e25850fdf8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"string\",\r\n    \"lastName\": \"string\",\r\n    \"emailId\": \"\",\r\n    \"accessScope\": {\r\n        \"accessLevel\": 3\r\n    },\r\n    \"associatedReaderGroups\": [],\r\n    \"isInviteSsoUser\": true,\r\n    \"ssoUserType\": 1,\r\n    \"invitedBy\": \"7a806e39-b1bd-418f-893e-cfc198b328cf\",\r\n    \"lastLoginAt\": \"2022-02-03T06:11:59.387Z\",\r\n    \"skipSsoInvitationEmail\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.document360.info/api/Security/readers",
+									"protocol": "https",
+									"host": [
+										"api",
+										"document360",
+										"info"
+									],
+									"path": [
+										"api",
+										"Security",
+										"readers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ImportTeamMember",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjA1MjU3OTQwRTc4MUIwQkI2QjRBNTg5NDlFNDk2N0EyODMyOTA2QzEiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJCU1Y1UU9lQnNMdHJTbGlVbmtsbm9vTXBCc0UifQ.eyJuYmYiOjE2NDM4NzE2MDQsImV4cCI6MTY0Mzg3MjUwNCwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY0Mzg2Njg1NywiaWRwIjoibG9jYWwiLCJqdGkiOiI5MUMwQUI4MTMxMEJEMkU2QUYzOTA3NzY5NEE1QUM1RiIsInNpZCI6IkY0NUE3MjkxMTBFODVERDhEMkQwOEMyQ0I4NUMwNjU5IiwiaWF0IjoxNjQzODcxNjA0LCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.PvU68s9ztpnKttBYaDogss3x6ljiZV0HxtY1t2_wHidW7vJNgSlIf9qveIjF_3Uvln_rJCa5vqOlcvnlk0APoTO7KuxXBwXf70WuEUQbFySouKlVVH9WZM34p2gS8BxBY2uz5M2D4EwRtjSmqN_tgFZligxaFNcV0_CH3k8zBmo82N2O9qXr8W7-RD8aWCc9iDTW2e3aUxU4lz0XmuuHEIwWcnuws-mdTZpUiYODJOSEJTN0JD_Gt7-AvGC9vJ3QT7xM8V4TXmfHG5RTSXsMXiJ0ybLp9TJ5BOYaRt3ymS_cUprXaQgT3Jsyvp8vOqzEGUyrdk9kn7PoLfvIB14FFw",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "a664b424-dcb0-49b7-9870-73e25850fdf8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"projectId\": \"a664b424-dcb0-49b7-9870-73e25850fdf8\",\r\n    \"userList\": [\r\n        {\r\n            \"email\": \"\",\r\n            \"firstName\": \"\",\r\n            \"lastName\": \"\"\r\n        }\r\n    ],\r\n    \"userType\": \"TeamAccount\",\r\n    \"invitedBy\": \"Celtia A\",\r\n    \"taskId\": \"string\",\r\n    \"isInviteSSOUser\": true,\r\n    \"associatedPortalRoleId\": \"c1b8ae08-78d5-41d9-b3c4-3b0892b05ca8\",\r\n    \"associatedContentRoleId\": \"2cf5bf6f-8ac9-4e5b-aed4-30bd5353d891\",\r\n    \"additionalTeamAccounts\": 0,\r\n    \"paymentIntentId\": \"\",\r\n    \"excessTeamAccountCount\": 0,\r\n    \"skipSsoInvitationEmail\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.document360.net//api/settings/ImportTeamMember",
+									"protocol": "https",
+									"host": [
+										"api",
+										"document360",
+										"net"
+									],
+									"path": [
+										"",
+										"api",
+										"settings",
+										"ImportTeamMember"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ImportReader",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjA1MjU3OTQwRTc4MUIwQkI2QjRBNTg5NDlFNDk2N0EyODMyOTA2QzEiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJCU1Y1UU9lQnNMdHJTbGlVbmtsbm9vTXBCc0UifQ.eyJuYmYiOjE2NDQ1NTY1NjIsImV4cCI6MTY0NDU1NzQ2MiwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY0NDU1MzY0MCwiaWRwIjoibG9jYWwiLCJqdGkiOiJEQ0IwQUEyNUNEODk5REJFQkFBQjFEQkVERTg2NTZDOSIsInNpZCI6IkM2RDMxREIzMkJBOTU0RThBQjhEMUVCQzJFMDBBMDhBIiwiaWF0IjoxNjQ0NTU2NTYyLCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.3bMIb0cJp09ari8DCPkSx177qWFGG3K2NN0Sd0J_L6eL25SpQmXdb3yb2yQ9VuQIJ_ogPRuAZZqW37Wsjx_fnUv7Ju6Tb3BCfdduZibCMau1bo0BUDkBaIyzYcvs_ZwYsZsj5UWzI5k11Xv50SjM6Q0l7X-IJTnAEhm4jIrJ3LEjFb2bWSWeCsHlxmJInWkp6m-DmTxXg_qHZimmZG5y9BK2HndmPYkPTjlAAIyGFd-4S1Z33c5Y9kt_wb35M1bBD03SbH-q2oMsO1n44uhqhtm4eNv1Rf9wM1xR3Fxdp4gaz2K-ecL2IVoQx7a_eTGoXEW2eN4Ia9pU9P9t8yb3yw",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "a664b424-dcb0-49b7-9870-73e25850fdf8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"projectId\": \"a664b424-dcb0-49b7-9870-73e25850fdf8\",\r\n    \"userList\": [\r\n        {\r\n            \"email\": \"\",\r\n            \"firstName\": \"\",\r\n            \"lastName\": \"\"\r\n        }\r\n    ],\r\n    \"userType\": \"Reader\",\r\n    \"invitedBy\": \"CeltiaA\",\r\n    \"taskId\": \"string\",\r\n    \"isInviteSSOUser\": true,\r\n    \"associatedPortalRoleId\": \"\",\r\n    \"associatedContentRoleId\": \"\",\r\n    \"additionalTeamAccounts\": 0,\r\n    \"paymentIntentId\": \"\",\r\n    \"excessTeamAccountCount\": 0,\r\n    \"skipSsoInvitationEmail\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.document360.net//api/settings/ImportReader",
+									"protocol": "https",
+									"host": [
+										"api",
+										"document360",
+										"net"
+									],
+									"path": [
+										"",
+										"api",
+										"settings",
+										"ImportReader"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Readers Offset Implementation",
+			"item": [
+				{
+					"name": "EU",
+					"item": [
+						{
+							"name": "V2 - Get readers",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_token",
+										"value": "kHEtoLsaOK7P0tzfVD5mpYewfRFxjFmt8YBVF+6FA0Zi89VP4NvlMVtfzupcmQ5nNJxF4Gjs7fYCDMQCxx8iHvGTJaA3pI7M69bFUQhLLWWmXRIDKLsu7lskJlHJ1nHjuTnIp4lepCEuCWN2RAV4Yg==",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://apihub.document360.io/v2/Readers",
+									"protocol": "https",
+									"host": [
+										"apihub",
+										"document360",
+										"io"
+									],
+									"path": [
+										"v2",
+										"Readers"
+									],
+									"query": [
+										{
+											"key": "offSet",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "V2 - Get reader groups",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_token",
+										"value": "kHEtoLsaOK7P0tzfVD5mpYewfRFxjFmt8YBVF+6FA0Zi89VP4NvlMVtfzupcmQ5nNJxF4Gjs7fYCDMQCxx8iHvGTJaA3pI7M69bFUQhLLWWmXRIDKLsu7lskJlHJ1nHjuTnIp4lepCEuCWN2RAV4Yg==",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://apihub.document360.io/v2/Readers/groups/dd73b2d3-1bb7-400e-9a95-df642ab23ef2?offSet=2",
+									"protocol": "https",
+									"host": [
+										"apihub",
+										"document360",
+										"io"
+									],
+									"path": [
+										"v2",
+										"Readers",
+										"groups",
+										"dd73b2d3-1bb7-400e-9a95-df642ab23ef2"
+									],
+									"query": [
+										{
+											"key": "offSet",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "US",
+					"item": [
+						{
+							"name": "V2 - Get readers",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_token",
+										"value": "6u5guwqLsbNPn8cqFNzEjiYAI3UnI6omNGcEoaIZDzAW+PS653OTwftjUl96qg0mCtrry3+OKDl6VMN4t81KovgyZASoFNgLuFVbHM5vPdcaJjKkOwc6aGKSkYllnFDPkKW19bJyLHN+A5jM6ix7kg==",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://apihub.us.document360.io/v2/Readers",
+									"protocol": "https",
+									"host": [
+										"apihub",
+										"us",
+										"document360",
+										"io"
+									],
+									"path": [
+										"v2",
+										"Readers"
+									],
+									"query": [
+										{
+											"key": "offSet",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "V2 - Get reader groups",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_token",
+										"value": "6u5guwqLsbNPn8cqFNzEjiYAI3UnI6omNGcEoaIZDzAW+PS653OTwftjUl96qg0mCtrry3+OKDl6VMN4t81KovgyZASoFNgLuFVbHM5vPdcaJjKkOwc6aGKSkYllnFDPkKW19bJyLHN+A5jM6ix7kg==",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://apihub.us.document360.io/v2/Readers/groups?offSet=1",
+									"protocol": "https",
+									"host": [
+										"apihub",
+										"us",
+										"document360",
+										"io"
+									],
+									"path": [
+										"v2",
+										"Readers",
+										"groups"
+									],
+									"query": [
+										{
+											"key": "offSet",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "AI related article recommender",
+			"item": [
+				{
+					"name": "Count",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "projectid",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"articleId\": \"134be985-2227-4e24-8cce-518f937399e6\",\r\n    \"languageCode\": \"en\",\r\n    \"currentVersionId\": \"ce0dfa49-3178-4a6e-8e74-25fbc7010909\",\r\n    \"projectDocumentVersionId\": \"d470053a-83f1-4a7c-bab2-3af79913880d\",\r\n    \"contentType\": \"block\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://preview.portal.document360.net/api/v2/articles/ai-related-articles-recommender",
+							"protocol": "https",
+							"host": [
+								"preview",
+								"portal",
+								"document360",
+								"net"
+							],
+							"path": [
+								"api",
+								"v2",
+								"articles",
+								"ai-related-articles-recommender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "License",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "projectid",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"articleId\": \"134be985-2227-4e24-8cce-518f937399e6\",\r\n    \"languageCode\": \"en\",\r\n    \"currentVersionId\": \"ce0dfa49-3178-4a6e-8e74-25fbc7010909\",\r\n    \"projectDocumentVersionId\": \"d470053a-83f1-4a7c-bab2-3af79913880d\",\r\n    \"contentType\": \"block\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://preview.portal.document360.net/api/v2/articles/ai-related-articles-recommender",
+							"protocol": "https",
+							"host": [
+								"preview",
+								"portal",
+								"document360",
+								"net"
+							],
+							"path": [
+								"api",
+								"v2",
+								"articles",
+								"ai-related-articles-recommender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Language",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "projectid",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"articleId\": \"134be985-2227-4e24-8cce-518f937399e6\",\r\n    \"languageCode\": \"en\",\r\n    \"currentVersionId\": \"ce0dfa49-3178-4a6e-8e74-25fbc7010909\",\r\n    \"projectDocumentVersionId\": \"d470053a-83f1-4a7c-bab2-3af79913880d\",\r\n    \"contentType\": \"block\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://preview.portal.document360.net/api/v2/articles/ai-related-articles-recommender",
+							"protocol": "https",
+							"host": [
+								"preview",
+								"portal",
+								"document360",
+								"net"
+							],
+							"path": [
+								"api",
+								"v2",
+								"articles",
+								"ai-related-articles-recommender"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Positive cases",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjRGMjNBQ0VFQURBMDkyQjhFMzFCMjY4QzJDNzJBNUQwQ0ZENTRDQzYiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJUeU9zN3EyZ2tyampHeWFNTEhLbDBNX1ZUTVkifQ.eyJuYmYiOjE2ODgxMTI5MjQsImV4cCI6MTY4ODExMzgyNCwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY4Nzg0MzAyMywiaWRwIjoibG9jYWwiLCJqdGkiOiI5MDVEN0EyMkE2REFCQjc4NEIzQkY4MUU3MTYzNTg2MiIsInNpZCI6IkM3ODczOUQ5MzFGNUUyRjAyQjhGREZENTlEODlDQUQ1IiwiaWF0IjoxNjg4MTEyOTI0LCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.SgVfWtFvwG_sKrDKO73FXITsqeawtJ46memenp2IFxcBLAvNSzLQmx4xPI11TvFqQiFZG_c6MYLtwyVyJ5HvoLrlIpfJZOnoPY-CIkP4us2CBWgObtSlnV2pQWjMahodk3TyDqJoOcRgFcuZolW6wxyuhbhTz95VhFAKTSnxinqrtVPpepiYivkV0jbGHqnhGqQBqQaXZ0DLyO6wbAAM0L3xiy9_mtgfO2Ne7RGiARCLR81aZquLHOk0kDnoTWIgKCmr1uW8zgWNpn5UoUOY_0jPpV9pV3CYb-ZgTD8ZPsqf3pP1hvRcL3dyVHlvt5PSRlOgXbmBmy-ys2bDCn9e5g",
+								"type": "text"
+							},
+							{
+								"key": "projectid",
+								"value": "ea095262-5635-4b54-9d33-c59304de17e4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"articleId\": \"07ad9bf0-2e62-4b22-934e-4d7c3f54e997\",\r\n    \"languageCode\": \"en\",\r\n    \"currentVersionId\": \"5c782313-54ca-451d-9549-961157f19782\",\r\n    \"projectDocumentVersionId\": \"d470053a-83f1-4a7c-bab2-3af79913880d\",\r\n    \"contentType\": \"wysiwyg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://preview.portal.document360.net/api/v2/articles/ai-related-articles-recommender",
+							"protocol": "https",
+							"host": [
+								"preview",
+								"portal",
+								"document360",
+								"net"
+							],
+							"path": [
+								"api",
+								"v2",
+								"articles",
+								"ai-related-articles-recommender"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Positive cases",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjRGMjNBQ0VFQURBMDkyQjhFMzFCMjY4QzJDNzJBNUQwQ0ZENTRDQzYiLCJ0eXAiOiJhdCtqd3QiLCJ4NXQiOiJUeU9zN3EyZ2tyampHeWFNTEhLbDBNX1ZUTVkifQ.eyJuYmYiOjE2ODgxMTI5MjQsImV4cCI6MTY4ODExMzgyNCwiaXNzIjoiaHR0cHM6Ly9pZGVudGl0eS5kb2N1bWVudDM2MC5uZXQiLCJhdWQiOiJkb2N1bWVudDM2MEFwaSIsImNsaWVudF9pZCI6ImRvY3VtZW50MzYwQW5ndWxhckFQUCIsInN1YiI6IjEyZmExZmU5LWVkMTItNGIzZi04YjU0LTZjZWY3OGU3M2Q4MCIsImF1dGhfdGltZSI6MTY4Nzg0MzAyMywiaWRwIjoibG9jYWwiLCJqdGkiOiI5MDVEN0EyMkE2REFCQjc4NEIzQkY4MUU3MTYzNTg2MiIsInNpZCI6IkM3ODczOUQ5MzFGNUUyRjAyQjhGREZENTlEODlDQUQ1IiwiaWF0IjoxNjg4MTEyOTI0LCJzY29wZSI6WyJvcGVuaWQiLCJlbWFpbCIsInByb2ZpbGUiLCJjdXN0b21lciJdLCJhbXIiOlsicHdkIl19.SgVfWtFvwG_sKrDKO73FXITsqeawtJ46memenp2IFxcBLAvNSzLQmx4xPI11TvFqQiFZG_c6MYLtwyVyJ5HvoLrlIpfJZOnoPY-CIkP4us2CBWgObtSlnV2pQWjMahodk3TyDqJoOcRgFcuZolW6wxyuhbhTz95VhFAKTSnxinqrtVPpepiYivkV0jbGHqnhGqQBqQaXZ0DLyO6wbAAM0L3xiy9_mtgfO2Ne7RGiARCLR81aZquLHOk0kDnoTWIgKCmr1uW8zgWNpn5UoUOY_0jPpV9pV3CYb-ZgTD8ZPsqf3pP1hvRcL3dyVHlvt5PSRlOgXbmBmy-ys2bDCn9e5g",
+										"type": "text"
+									},
+									{
+										"key": "projectid",
+										"value": "a644b49b-ec2b-4d11-ad8a-b55a002e91cd",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"articleId\": \"07ad9bf0-2e62-4b22-934e-4d7c3f54e997\",\r\n    \"languageCode\": \"en\",\r\n    \"currentVersionId\": \"5c782313-54ca-451d-9549-961157f19782\",\r\n    \"projectDocumentVersionId\": \"d470053a-83f1-4a7c-bab2-3af79913880d\",\r\n    \"contentType\": \"wysiwyg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://preview.portal.document360.net/api/v2/articles/ai-related-articles-recommender",
+									"protocol": "https",
+									"host": [
+										"preview",
+										"portal",
+										"document360",
+										"net"
+									],
+									"path": [
+										"api",
+										"v2",
+										"articles",
+										"ai-related-articles-recommender"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "ARRAffinity=4c1bc1455b54c9086ad07781fd6b5a788e7e7dc5cd52ec1be0753125e2b09f51;Path=/;HttpOnly;Secure;Domain=document360-dev-api.azurewebsites.net"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "ARRAffinitySameSite=4c1bc1455b54c9086ad07781fd6b5a788e7e7dc5cd52ec1be0753125e2b09f51;Path=/;HttpOnly;SameSite=None;Secure;Domain=document360-dev-api.azurewebsites.net"
+								},
+								{
+									"key": "Request-Context",
+									"value": "appId=cid-v1:daab32bb-b6b8-432d-b27c-aa3c328951c4"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "api-supported-versions",
+									"value": "1.0, 2.0"
+								},
+								{
+									"key": "X-Cache",
+									"value": "CONFIG_NOCACHE"
+								},
+								{
+									"key": "X-Azure-Ref",
+									"value": "0dimcZAAAAACu1Tz/SF3FQpuEHvoVb5WQUEhMMzBFREdFMDMwNwAyNzZkN2M3Ni0zYTg1LTQyNjAtOTFlYi1lNDU0MWMyNTFmZDk="
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Jun 2023 12:37:10 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"aiRelatedArticles\": [\n        {\n            \"id\": \"649a76b1228c31bd4c5d1d7d\",\n            \"articleId\": \"9003466b-9f73-4b89-8651-93be93cf944c\",\n            \"title\": \"Links status\",\n            \"score\": 77.60502\n        },\n        {\n            \"id\": \"649a7783228c31bd4c5d61c1\",\n            \"articleId\": \"6949007e-fc5f-4779-a6eb-0db9f9367fa8\",\n            \"title\": \"Links status analytics\",\n            \"score\": 73.79201\n        },\n        {\n            \"id\": \"649a76a3228c31bd4c5d15af\",\n            \"articleId\": \"cd9ff49d-983a-4e47-9be0-e8ba33898b5e\",\n            \"title\": \"Actions and controls\",\n            \"score\": 71.32229\n        }\n    ],\n    \"extensionData\": null,\n    \"context\": null,\n    \"success\": true,\n    \"errors\": [],\n    \"warnings\": [],\n    \"information\": [],\n    \"featureExplorerStatus\": null\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

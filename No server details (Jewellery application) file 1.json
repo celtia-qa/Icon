@@ -1,0 +1,239 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Jewellery Shop API",
+    "version": "1.0.0",
+    "description": "API for managing a jewellery shop's inventory, orders, and related webhooks.",
+    "license": {
+      "name": "MIT",
+      "identifier": "MIT"
+    },
+    "contact": {
+      "name": "API Support",
+      "email": "support@jewelleryshop.com"
+    }
+  },
+  "jsonSchemaDialect": "https://json-schema.org/draft/2020-12/schema",
+  "webhooks": {
+    "orderStatusUpdate": {
+      "post": {
+        "summary": "Triggered when the status of an order is updated.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "orderId": {
+                    "type": "string",
+                    "description": "The unique identifier for the order."
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": ["PENDING", "PROCESSING", "SHIPPED", "DELIVERED"],
+                    "description": "The updated status of the order."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Webhook processed successfully."
+          }
+        }
+      }
+    },
+    "paymentReceived": {
+      "post": {
+        "summary": "Triggered when a payment for an order is received.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "orderId": {
+                    "type": "string",
+                    "description": "The unique identifier for the order."
+                  },
+                  "paymentId": {
+                    "type": "string",
+                    "description": "The unique identifier for the payment."
+                  },
+                  "amount": {
+                    "type": "number",
+                    "description": "The amount received."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Webhook processed successfully."
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/products": {
+      "get": {
+        "summary": "Retrieve a list of jewellery products.",
+        "responses": {
+          "200": {
+            "description": "A list of jewellery products.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders": {
+      "post": {
+        "summary": "Create a new order for jewellery products.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "customerName": {
+                    "type": "string",
+                    "description": "The name of the customer."
+                  },
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "productId": {
+                          "type": "string",
+                          "description": "The unique identifier for the product."
+                        },
+                        "quantity": {
+                          "type": "integer",
+                          "description": "The quantity of the product."
+                        }
+                      }
+                    }
+                  }
+                },
+                "required": ["customerName", "items"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Order created successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "orderId": {
+                      "type": "string",
+                      "description": "The unique identifier for the created order."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/orders/{orderId}": {
+      "get": {
+        "summary": "Retrieve details of a specific order.",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details of the order.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Order"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Product": {
+        "type": "object",
+        "properties": {
+          "productId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          }
+        },
+        "required": ["productId", "name", "price"]
+      },
+      "Order": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "string"
+          },
+          "customerName": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "productId": {
+                  "type": "string"
+                },
+                "quantity": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": ["PENDING", "PROCESSING", "SHIPPED", "DELIVERED"]
+          }
+        },
+        "required": ["orderId", "customerName", "items"]
+      }
+    }
+  }
+}

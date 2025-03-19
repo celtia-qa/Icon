@@ -1,0 +1,1098 @@
+openapi: 3.0.0
+info:
+    title: XGen Tracker API
+    version: 1.0.0
+    description: API for tracking XGen events
+servers:
+    - url: https://tracker-eu-stage.xgen.dev
+      description: Tracker API (STAGE)
+security:
+    - AccessTokenAuth: []
+paths:
+    '/customers/{customerId}/users/{userId}/page-view':
+        post:
+            summary: Track a page view event
+            tags:
+                - Meta Tracking
+            parameters:
+                - in: path
+                  name: customerId
+                  required: true
+                  schema:
+                      type: string
+                - in: path
+                  name: userId
+                  required: true
+                  schema:
+                      type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            allOf:
+                                - '$ref': '#/components/schemas/DefaultEventPayloadParams'
+                                - type: object
+                                  properties:
+                                      action_name:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_name'
+                                      action_detail:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_detail'
+                                      action_type:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_type'
+                                      context:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/context'
+                            example:
+                                rec: '1'
+                                idsite: '1234'
+                                url: https://example.com
+                                urlref: https://example.com
+                                locale: en_US
+                                uid: '{"customer_id":"customer_id","user_type":"return_user","testing_group_name":"Inactive","session_id":"524e0542-5713-4755-a8c0-1430cbd58aa9"}'
+                                action_name: page_view
+                                action_detail: page_view
+                                action_type: ecomm
+                                context:
+                                    dynamic: data
+            responses:
+                '200':
+                    description: Successful response
+                '400':
+                    description: Bad request
+                '401':
+                    description: Unauthorized
+                '403':
+                    description: Forbidden
+                '500':
+                    description: Internal server error
+    '/customers/{customerId}/users/{userId}/group-assignment':
+        post:
+            summary: Track a group assignment event. This event is used to track when a
+                user is assigned an ab group
+            tags:
+                - Meta Tracking
+            parameters:
+                - in: path
+                  name: customerId
+                  required: true
+                  schema:
+                      type: string
+                - in: path
+                  name: userId
+                  required: true
+                  schema:
+                      type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            allOf:
+                                - '$ref': '#/components/schemas/DefaultEventPayloadParams'
+                                - type: object
+                                  properties:
+                                      action_name:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_name'
+                                      action_detail:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_detail'
+                                      action_type:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_type'
+                                      context:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/context'
+                            example:
+                                rec: '1'
+                                idsite: '1234'
+                                url: https://example.com
+                                urlref: https://example.com
+                                locale: en_US
+                                uid: '{"customer_id":"customer_id","user_type":"return_user","testing_group_name":"Inactive","session_id":"524e0542-5713-4755-a8c0-1430cbd58aa9"}'
+                                action_name: group_assignment
+                                action_detail: group_assignment
+                                action_type: ecomm
+                                context:
+                                    prev_value: a_group
+                                    new_value: b_group
+            responses:
+                '200':
+                    description: Successful response
+                '400':
+                    description: Bad request
+                '401':
+                    description: Unauthorized
+                '403':
+                    description: Forbidden
+                '500':
+                    description: Internal server error
+    '/customers/{customerId}/users/{userId}/product-view':
+        post:
+            summary: Track a product view event
+            tags:
+                - Meta Tracking
+            parameters:
+                - in: path
+                  name: customerId
+                  required: true
+                  schema:
+                      type: string
+                - in: path
+                  name: userId
+                  required: true
+                  schema:
+                      type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            allOf:
+                                - '$ref': '#/components/schemas/DefaultEventPayloadParams'
+                                - type: object
+                                  properties:
+                                      action_name:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_name'
+                                      action_detail:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_detail'
+                                      action_type:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_type'
+                                      cvar:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/cvar'
+                                      context:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/context'
+                            example:
+                                rec: '1'
+                                idsite: '1234'
+                                url: https://example.com
+                                urlref: https://example.com
+                                locale: en_US
+                                uid: '{"customer_id":"customer_id","user_type":"return_user","testing_group_name":"Inactive","session_id":"524e0542-5713-4755-a8c0-1430cbd58aa9"}'
+                                action_name: product_view
+                                action_detail: product_view
+                                action_type: ecomm
+                                cvar: '{"2":["_pkp",1000],"3":["_pks","1234"],"4":["_pkn","product_name"],"5":["_pkc","{"currency_code":"USD"}"]}'
+            responses:
+                '200':
+                    description: Successful response
+                '400':
+                    description: Bad request
+                '401':
+                    description: Unauthorized
+                '403':
+                    description: Forbidden
+                '500':
+                    description: Internal server error
+    '/customers/{customerId}/users/{userId}/product-add':
+        post:
+            summary: Track a product add event. This event is used to track when a user
+                adds a product to their cart
+            tags:
+                - Ecommerce
+            parameters:
+                - in: path
+                  name: customerId
+                  required: true
+                  schema:
+                      type: string
+                - in: path
+                  name: userId
+                  required: true
+                  schema:
+                      type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            allOf:
+                                - '$ref': '#/components/schemas/DefaultEventPayloadParams'
+                                - type: object
+                                  properties:
+                                      action_name:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_name'
+                                      action_detail:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_detail'
+                                      action_type:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_type'
+                                      ec_items:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/ec_items'
+                                      context:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/context'
+                            example:
+                                rec: '1'
+                                idsite: '1234'
+                                url: https://example.com
+                                urlref: https://example.com
+                                locale: en_US
+                                uid: '{"customer_id":"customer_id","user_type":"return_user","testing_group_name":"Inactive","session_id":"524e0542-5713-4755-a8c0-1430cbd58aa9"}'
+                                action_name: product_add
+                                action_detail: product_add
+                                action_type: ecomm
+                                ec_items: '[["1234","Product Name","{"currency_code":"usd"}",1000,1]]'
+            responses:
+                '200':
+                    description: Successful response
+                '400':
+                    description: Bad request
+                '401':
+                    description: Unauthorized
+                '403':
+                    description: Forbidden
+                '500':
+                    description: Internal server error
+    '/customers/{customerId}/users/{userId}/product-purchase':
+        post:
+            summary: Track a product purchase event. This event is used to track when a
+                user purchases a product
+            tags:
+                - Ecommerce
+            parameters:
+                - in: path
+                  name: customerId
+                  required: true
+                  schema:
+                      type: string
+                - in: path
+                  name: userId
+                  required: true
+                  schema:
+                      type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            allOf:
+                                - '$ref': '#/components/schemas/DefaultEventPayloadParams'
+                                - type: object
+                                  properties:
+                                      action_name:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_name'
+                                      action_detail:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_detail'
+                                      action_type:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_type'
+                                      ec_id:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/ec_id'
+                                      ec_items:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/ec_items'
+                                      version:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/version'
+                                      context:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/context'
+                            example:
+                                rec: '1'
+                                idsite: '1234'
+                                url: https://example.com
+                                urlref: https://example.com
+                                locale: en_US
+                                uid: '{"customer_id":"customer_id","user_type":"return_user","testing_group_name":"Inactive","session_id":"524e0542-5713-4755-a8c0-1430cbd58aa9"}'
+                                action_name: product_purchase
+                                action_detail: product_purchase
+                                action_type: ecomm
+                                ec_id: '1234'
+                                ec_items: '[["1234","Product Name","{"currency_code":"usd"}",1000,1]]'
+                                version: '2'
+            responses:
+                '200':
+                    description: Successful response
+                '400':
+                    description: Bad request
+                '401':
+                    description: Unauthorized
+                '403':
+                    description: Forbidden
+                '500':
+                    description: Internal server error
+    '/customers/{customerId}/users/{userId}/purchase-order':
+        post:
+            summary: Track a purchase order event. This event is used to track when a user
+                makes a purchase order
+            tags:
+                - Ecommerce
+            parameters:
+                - in: path
+                  name: customerId
+                  required: true
+                  schema:
+                      type: string
+                - in: path
+                  name: userId
+                  required: true
+                  schema:
+                      type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            allOf:
+                                - '$ref': '#/components/schemas/DefaultEventPayloadParams'
+                                - type: object
+                                  properties:
+                                      action_name:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_name'
+                                      action_detail:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_detail'
+                                      action_type:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_type'
+                                      revenue:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/revenue'
+                                      ec_id:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/ec_id'
+                                      ec_items:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/ec_items'
+                                      ec_st:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/ec_st'
+                                      ec_tx:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/ec_tx'
+                                      ec_dt:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/ec_dt'
+                                      idgoal:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/idgoal'
+                                      version:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/version'
+                                      context:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/context'
+                            example:
+                                rec: '1'
+                                idsite: '1234'
+                                url: https://example.com
+                                urlref: https://example.com
+                                locale: en_US
+                                uid: '{"customer_id":"customer_id","user_type":"return_user","testing_group_name":"Inactive","session_id":"524e0542-5713-4755-a8c0-1430cbd58aa9"}'
+                                action_name: purchase_order
+                                action_detail: purchase_order
+                                action_type: ecomm
+                                revenue: 1000
+                                ec_id: '1234'
+                                ec_items: '[["1234","Product Name","{"currency_code":"usd"}",1000,1]]'
+                                ec_st: 1000
+                                ec_tx: 100
+                                ec_dt: '25'
+                                idgoal: '1'
+                                version: '2'
+            responses:
+                '200':
+                    description: Successful response
+                '400':
+                    description: Bad request
+                '401':
+                    description: Unauthorized
+                '403':
+                    description: Forbidden
+                '500':
+                    description: Internal server error
+    '/customers/{customerId}/users/{userId}/category-view':
+        post:
+            summary: Track a category view event. This event is used to track when a user
+                views a category page such as a Product Listing Page
+            tags:
+                - Meta Tracking
+            parameters:
+                - in: path
+                  name: customerId
+                  required: true
+                  schema:
+                      type: string
+                - in: path
+                  name: userId
+                  required: true
+                  schema:
+                      type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            allOf:
+                                - '$ref': '#/components/schemas/DefaultEventPayloadParams'
+                                - type: object
+                                  properties:
+                                      action_name:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_name'
+                                      action_detail:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_detail'
+                                      action_type:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_type'
+                                      cvar:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/cvar'
+                                      context:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/context'
+                            example:
+                                rec: '1'
+                                idsite: '1234'
+                                url: https://example.com
+                                urlref: https://example.com
+                                locale: en_US
+                                uid: '{"customer_id":"customer_id","user_type":"return_user","testing_group_name":"Inactive","session_id":"524e0542-5713-4755-a8c0-1430cbd58aa9"}'
+                                action_name: category_view
+                                action_detail: category_view
+                                action_type: ecomm
+                                cvar: '{"5":["_pkc","Category Name"]}'
+                                context:
+                                    plpProducts:
+                                        - '1234'
+                                        - '5678'
+            responses:
+                '200':
+                    description: Successful response
+                '400':
+                    description: Bad request
+                '401':
+                    description: Unauthorized
+                '403':
+                    description: Forbidden
+                '500':
+                    description: Internal server error
+    '/customers/{customerId}/users/{userId}/element-view':
+        post:
+            summary: Track an element view event. This event is used to track when an element
+                is in the user's viewport
+            tags:
+                - Element
+            parameters:
+                - in: path
+                  name: customerId
+                  required: true
+                  schema:
+                      type: string
+                - in: path
+                  name: userId
+                  required: true
+                  schema:
+                      type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            allOf:
+                                - '$ref': '#/components/schemas/DefaultEventPayloadParams'
+                                - type: object
+                                  properties:
+                                      action_name:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_name'
+                                      action_detail:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_detail'
+                                      action_type:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_type'
+                                      c_n:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/c_n'
+                                      c_t:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/c_t'
+                                      c_i:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/c_i'
+                                      context:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/context'
+                            example:
+                                rec: '1'
+                                idsite: '1234'
+                                url: https://example.com
+                                urlref: https://example.com
+                                locale: en_US
+                                uid: '{"customer_id":"customer_id","user_type":"return_user","testing_group_name":"Inactive","session_id":"524e0542-5713-4755-a8c0-1430cbd58aa9"}'
+                                action_name: content_tracking
+                                action_detail: element_view
+                                action_type: smart_element
+                                c_n: sm_el_1234
+                                c_t: '1234,5678,9012'
+                                c_i: elementViewed
+            responses:
+                '200':
+                    description: Successful response
+                '400':
+                    description: Bad request
+                '401':
+                    description: Unauthorized
+                '403':
+                    description: Forbidden
+                '500':
+                    description: Internal server error
+    '/customers/{customerId}/users/{userId}/element-impression':
+        post:
+            summary: Track an element impression event. This event is used to track when
+                an element is rendered on the page
+            tags:
+                - Element
+            parameters:
+                - in: path
+                  name: customerId
+                  required: true
+                  schema:
+                      type: string
+                - in: path
+                  name: userId
+                  required: true
+                  schema:
+                      type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            allOf:
+                                - '$ref': '#/components/schemas/DefaultEventPayloadParams'
+                                - type: object
+                                  properties:
+                                      action_name:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_name'
+                                      action_detail:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_detail'
+                                      action_type:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_type'
+                                      c_n:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/c_n'
+                                      c_t:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/c_t'
+                                      context:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/context'
+                            example:
+                                rec: '1'
+                                idsite: '1234'
+                                url: https://example.com
+                                urlref: https://example.com
+                                locale: en_US
+                                uid: '{"customer_id":"customer_id","user_type":"return_user","testing_group_name":"Inactive","session_id":"524e0542-5713-4755-a8c0-1430cbd58aa9"}'
+                                action_name: content_tracking
+                                action_detail: element_impression
+                                action_type: smart_element
+                                c_n: sm_el_1234
+                                c_t: '1234,5678,9012'
+            responses:
+                '200':
+                    description: Successful response
+                '400':
+                    description: Bad request
+                '401':
+                    description: Unauthorized
+                '403':
+                    description: Forbidden
+                '500':
+                    description: Internal server error
+    '/customers/{customerId}/users/{userId}/element-click':
+        post:
+            summary: Track an element click event. This event is used to track when an element
+                is clicked
+            tags:
+                - Element
+            parameters:
+                - in: path
+                  name: customerId
+                  required: true
+                  schema:
+                      type: string
+                - in: path
+                  name: userId
+                  required: true
+                  schema:
+                      type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            allOf:
+                                - '$ref': '#/components/schemas/DefaultEventPayloadParams'
+                                - type: object
+                                  properties:
+                                      action_name:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_name'
+                                      action_detail:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_detail'
+                                      action_type:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_type'
+                                      c_n:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/c_n'
+                                      c_p:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/c_p'
+                                      c_t:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/c_t'
+                                      c_i:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/c_i'
+                                      context:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/context'
+                            example:
+                                rec: '1'
+                                idsite: '1234'
+                                url: https://example.com
+                                urlref: https://example.com
+                                locale: en_US
+                                uid: '{"customer_id":"customer_id","user_type":"return_user","testing_group_name":"Inactive","session_id":"524e0542-5713-4755-a8c0-1430cbd58aa9"}'
+                                action_name: content_tracking
+                                action_detail: element_click
+                                action_type: smart_element
+                                c_n: sm_el_1234
+                                c_p: '1234'
+                                c_t: '1234,5678,9012'
+                                c_i: elementClicked
+            responses:
+                '200':
+                    description: Successful response
+                '400':
+                    description: Bad request
+                '401':
+                    description: Unauthorized
+                '403':
+                    description: Forbidden
+                '500':
+                    description: Internal server error
+    '/customers/{customerId}/users/{userId}/search':
+        post:
+            summary: Track a search event. This event is used to track when a user sends
+                a search query
+            tags:
+                - Search
+            parameters:
+                - in: path
+                  name: customerId
+                  required: true
+                  schema:
+                      type: string
+                - in: path
+                  name: userId
+                  required: true
+                  schema:
+                      type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            allOf:
+                                - '$ref': '#/components/schemas/DefaultEventPayloadParams'
+                                - type: object
+                                  properties:
+                                      action_name:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_name'
+                                      action_detail:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_detail'
+                                      action_type:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_type'
+                                      query_id:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/query_id'
+                                      context:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/context'
+                            example:
+                                rec: '1'
+                                idsite: '1234'
+                                url: https://example.com
+                                urlref: https://example.com
+                                locale: en_US
+                                uid: '{"customer_id":"customer_id","user_type":"return_user","testing_group_name":"Inactive","session_id":"524e0542-5713-4755-a8c0-1430cbd58aa9"}'
+                                action_name: search
+                                action_detail: search
+                                action_type: search_service
+                                query_id: 4893e2d0-2a35-4c58-81b6-ad3906518563
+                                context:
+                                    query: dress
+                                    deployment_id: '1234'
+                                    is_type_to_search: false
+                                    page: 0
+                                    filters_context:
+                                        color: Orange
+            responses:
+                '200':
+                    description: Successful response
+                '400':
+                    description: Bad request
+                '401':
+                    description: Unauthorized
+                '403':
+                    description: Forbidden
+                '500':
+                    description: Internal server error
+    '/customers/{customerId}/users/{userId}/search-result':
+        post:
+            summary: Track a search result event. This event is used to track when a user
+                receives a search result
+            tags:
+                - Search
+            parameters:
+                - in: path
+                  name: customerId
+                  required: true
+                  schema:
+                      type: string
+                - in: path
+                  name: userId
+                  required: true
+                  schema:
+                      type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            allOf:
+                                - '$ref': '#/components/schemas/DefaultEventPayloadParams'
+                                - type: object
+                                  properties:
+                                      action_name:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_name'
+                                      action_detail:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_detail'
+                                      action_type:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_type'
+                                      query_id:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/query_id'
+                                      c_n:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/c_n'
+                                      c_t:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/c_t'
+                                      c_i:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/c_i'
+                                      context:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/context'
+                            example:
+                                rec: '1'
+                                idsite: '1234'
+                                url: https://example.com
+                                urlref: https://example.com
+                                locale: en_US
+                                uid: '{"customer_id":"customer_id","user_type":"return_user","testing_group_name":"Inactive","session_id":"524e0542-5713-4755-a8c0-1430cbd58aa9"}'
+                                action_name: content_tracking
+                                action_detail: search_result
+                                action_type: search_service
+                                query_id: 4893e2d0-2a35-4c58-81b6-ad3906518563
+                                c_n: '1234'
+                                c_t: '1234,5678,9012'
+                                c_i: searchResult
+                                context:
+                                    query: dress
+                                    deployment_id: '1234'
+                                    search_type: gen_search
+                                    search_response: These are the results we found....
+                                    is_type_to_search: false
+                                    page: 0
+                                    filters_context:
+                                        color: Orange
+            responses:
+                '200':
+                    description: Successful response
+                '400':
+                    description: Bad request
+                '401':
+                    description: Unauthorized
+                '403':
+                    description: Forbidden
+                '500':
+                    description: Internal server error
+    '/customers/{customerId}/users/{userId}/search-click':
+        post:
+            summary: Track a search click event. This event is used to track when a user
+                clicks on a search result
+            tags:
+                - Search
+            parameters:
+                - in: path
+                  name: customerId
+                  required: true
+                  schema:
+                      type: string
+                - in: path
+                  name: userId
+                  required: true
+                  schema:
+                      type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            allOf:
+                                - '$ref': '#/components/schemas/DefaultEventPayloadParams'
+                                - type: object
+                                  properties:
+                                      action_name:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_name'
+                                      action_detail:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_detail'
+                                      action_type:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_type'
+                                      query_id:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/query_id'
+                                      c_n:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/c_n'
+                                      c_p:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/c_p'
+                                      c_t:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/c_t'
+                                      c_i:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/c_i'
+                                      context:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/context'
+                            example:
+                                rec: '1'
+                                idsite: '1234'
+                                url: https://example.com
+                                urlref: https://example.com
+                                locale: en_US
+                                uid: '{"customer_id":"customer_id","user_type":"return_user","testing_group_name":"Inactive","session_id":"524e0542-5713-4755-a8c0-1430cbd58aa9"}'
+                                action_name: content_tracking
+                                action_detail: search_click
+                                action_type: search_service
+                                query_id: 4893e2d0-2a35-4c58-81b6-ad3906518563
+                                c_n: '1234'
+                                c_p: '1234'
+                                c_t: '1234,5678,9012'
+                                c_i: searchResult
+                                context:
+                                    query: dress
+                                    deployment_id: '1234'
+                                    is_type_to_search: false
+            responses:
+                '200':
+                    description: Successful response
+                '400':
+                    description: Bad request
+                '401':
+                    description: Unauthorized
+                '403':
+                    description: Forbidden
+                '500':
+                    description: Internal server error
+    '/customers/{customerId}/users/{userId}/batch':
+        post:
+            summary: This can be used to send multiple event types in a single request.
+            tags:
+                - Batch
+            parameters:
+                - in: path
+                  name: customerId
+                  required: true
+                  schema:
+                      type: string
+                - in: path
+                  name: userId
+                  required: true
+                  schema:
+                      type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: array
+                            items:
+                                allOf:
+                                    - '$ref': '#/components/schemas/DefaultEventPayloadParams'
+                                    - '$ref': '#/components/schemas/CustomEventPayloadParams'
+            responses:
+                '200':
+                    description: Successful response
+                '400':
+                    description: Bad request
+                '401':
+                    description: Unauthorized
+                '403':
+                    description: Forbidden
+                '500':
+                    description: Internal server error
+    '/customers/{customerId}/users/{userId}/error':
+        post:
+            summary: This event is used to track when an error occurs
+            tags:
+                - Error
+            parameters:
+                - in: path
+                  name: customerId
+                  required: true
+                  schema:
+                      type: string
+                - in: path
+                  name: userId
+                  required: true
+                  schema:
+                      type: string
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            allOf:
+                                - '$ref': '#/components/schemas/DefaultEventPayloadParams'
+                                - type: object
+                                  properties:
+                                      action_name:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_name'
+                                      action_detail:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_detail'
+                                      action_type:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/action_type'
+                                      e_c:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/e_c'
+                                      e_a:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/e_a'
+                                      e_n:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/e_n'
+                                      e_v:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/e_v'
+                                      context:
+                                          '$ref': '#/components/schemas/CustomEventPayloadParams/properties/context'
+                            example:
+                                rec: '1'
+                                idsite: '1234'
+                                url: https://example.com
+                                urlref: https://example.com
+                                locale: en_US
+                                uid: '{"customer_id":"customer_id","user_type":"return_user","testing_group_name":"Inactive","session_id":"524e0542-5713-4755-a8c0-1430cbd58aa9"}'
+                                action_name: error_tracking
+                                action_detail: Error message details
+                                action_type: Error tracking
+                                e_c: Error tracking
+                                e_a: Error message details
+                                e_n: 'TypeError: ...'
+                                e_v: Error value
+            responses:
+                '200':
+                    description: Successful response
+                '400':
+                    description: Bad request
+                '401':
+                    description: Unauthorized
+                '403':
+                    description: Forbidden
+                '500':
+                    description: Internal server error
+components:
+    securitySchemes:
+        AccessTokenAuth:
+            type: apiKey
+            in: header
+            name: access_token
+            description: Access token Authentication
+    schemas:
+        DefaultEventPayloadParams:
+            type: object
+            properties:
+                rec:
+                    type: string
+                    example: '1'
+                    description: Default parameter to send with event payload
+                idsite:
+                    type: string
+                    example: '1234'
+                    description: The tracking_id of the site
+                url:
+                    type: string
+                    example: https://example.com
+                    description: The URL of the page
+                urlref:
+                    type: string
+                    example: https://example.com
+                    description: The referrer URL
+                locale:
+                    type: string
+                    example: en_US
+                    description: The locale of the user
+                uid:
+                    type: string
+                    example: '{"customer_id":"customer_id","user_type":"return_user","testing_group_name":"Inactive","session_id":"524e0542-5713-4755-a8c0-1430cbd58aa9"}'
+                    description: A string representation of the user object
+        CustomEventPayloadParams:
+            type: object
+            properties:
+                c_p:
+                    type: string
+                    example: '1234'
+                    description: The product_id. Used for events such as product_view, product_add,
+                        product_purchase, etc.
+                c_n:
+                    type: string
+                    example: sm_el_1234
+                    description: The ID of the element or deployment to track
+                c_t:
+                    type: string
+                    example: '1234,5678,9012'
+                    description: A comma separated list of products
+                c_i:
+                    type: string
+                    example: searchResult
+                    description: A description of the event type
+                cvar:
+                    type: string
+                    example: '{"2":["_pkp",1000],"3":["_pks","1234"],"4":["_pkn","product_name"],"5":["_pkc","{"currency_code":"USD"}"]}'
+                    description: A string representation of a JSON object containing information
+                        about the product. _pkp is the product's price, _pks is the product's
+                        sku, _pkn is the product's name, _pkc is the product's currency.
+                ec_items:
+                    type: string
+                    example: '[["1234","Product Name","{"currency_code":"usd"}",1000,1]]'
+                    description: A string representation of a JSON array containing information
+                        about the products. Index 0 is the product's sku, index 1 is the product's
+                        name, index 2 is the product's currency, index 3 is the product's price,
+                        and index 4 is the product's quantity.
+                ec_id:
+                    type: string
+                    example: '1234'
+                    description: The Order ID. Should be sent with purchase events.
+                revenue:
+                    type: number
+                    example: 1000
+                    description: The revenue. Should be sent with purchase events.
+                context:
+                    type: object
+                    additionalProperties: true
+                    example:
+                        key1: value1
+                        key2: 1000
+                        nested:
+                            key: value
+                        array:
+                            - 1
+                            - 2
+                            - 3
+                    description: A JSON object of context data. Used to pass dynamic, additional
+                        data to the tracker.
+                query_id:
+                    type: string
+                    example: 4893e2d0-2a35-4c58-81b6-ad3906518563
+                    description: Used for search events. The query id is sent to the tracker
+                        to be able to identify and group search events.
+                action_name:
+                    type: string
+                    example: content_tracking
+                    description: The name of the action that was performed.
+                action_detail:
+                    type: string
+                    example: search_result
+                    description: Details on the action that was performed.
+                action_type:
+                    type: string
+                    example: search_service
+                    description: The meta action that was performed.
+                e_c:
+                    type: string
+                    example: Error tracking
+                    description: The category of the event
+                e_a:
+                    type: string
+                    example: An error occurred
+                    description: The action type of the event. Used to send a message or description.
+                e_n:
+                    type: string
+                    example: TypeError:...
+                    description: The name of the event
+                e_v:
+                    type: string
+                    example: Error tracking
+                    description: The value of the event
+                ec_st:
+                    type: number
+                    example: 1000
+                    description: The total revenue
+                ec_tx:
+                    type: number
+                    example: 1000
+                    description: The total tax
+                ec_dt:
+                    type: string
+                    example: '100'
+                    description: The total discount
+                idgoal:
+                    type: string
+                    example: '0'
+                    description: The goal ID
+                version:
+                    type: string
+                    example: '2'
+                    description: The version of the event

@@ -1,0 +1,859 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Document360 Customer API",
+    "description": "Document360 RESTful APIs will allow you to integrate your documentation with your software, allowing you to easily onboard new users, manage your articles and more.\n\nYou can find detailed API documentation here: [API Documentation](https://apidocs.document360.io/docs)",
+    "contact": {
+      "name": "Document360 Support",
+      "url": "https://document360.io/contact-us/",
+      "email": "support@document360.com"
+    },
+    "version": "2.0"
+  },
+  "paths": {
+    "/v2/APIReferences": {
+      "delete": {
+        "tags": [
+          "APIReferences"
+        ],
+        "summary": "Deletes an API reference",
+        "parameters": [
+          {
+            "name": "projectVersionId",
+            "in": "query",
+            "description": "The ID of the project version",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "apiReferenceId",
+            "in": "query",
+            "description": "The ID of the API reference",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteApiReferenceResponseCustomer"
+                },
+                "examples": {
+                  "API reference deleted": {
+                    "summary": "API reference is deleted successfully.",
+                    "value": {
+                      "data": [
+                        {
+                          "api_reference_id": "0a39bfeb-90f8-4fb3-b37a-5838db6387f6",
+                          "details": "Successfully deleted"
+                        }
+                      ],
+                      "extension_data": null,
+                      "success": true,
+                      "errors": [],
+                      "warnings": [],
+                      "information": []
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerApiBaseResponse"
+                },
+                "examples": {
+                  "Invalid API reference": {
+                    "summary": "Kindly verify that the API reference ID is valid and perform the task again.",
+                    "value": {
+                      "extension_data": null,
+                      "success": false,
+                      "errors": [
+                        {
+                          "extension_data": null,
+                          "stack_trace": null,
+                          "description": "The supplied project version id 99f4b8d5-ccbd-41c9-8892-57c2fcf338d2 does not exist in your project.",
+                          "error_code": null,
+                          "custom_data": null
+                        }
+                      ],
+                      "warnings": [],
+                      "information": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "APIReferences"
+        ],
+        "summary": "Import the API reference spec file",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "ForceImport",
+                  "ProjectVersionId",
+                  "UserId"
+                ],
+                "type": "object",
+                "properties": {
+                  "ProjectVersionId": {
+                    "type": "string",
+                    "description": "The ID of the project version"
+                  },
+                  "UserId": {
+                    "type": "string",
+                    "description": "The ID of the team account"
+                  },
+                  "ForceImport": {
+                    "type": "boolean",
+                    "description": "**true**: The errors and alerts will not be shown while importing the spec file\n**false**: The errors and alerts will be shown while importing the spec file",
+                    "default": "true"
+                  },
+                  "Url": {
+                    "type": "string",
+                    "description": "Url of the spec file"
+                  },
+                  "File": {
+                    "type": "string",
+                    "description": "File path of the spec file",
+                    "format": "binary"
+                  }
+                }
+              },
+              "examples": {
+                "Add API reference request": {
+                  "summary": "Import an API reference with projectVersionId, userId, and a spec file url or a file type.",
+                  "value": {
+                    "project_version_id": "5b291e6b-fa40-4ab9-941e-f8fffc23b376",
+                    "user_id": "46f48bc7-760f-4b07-b2d2-fce4aa8ba234",
+                    "force_import": true,
+                    "url": "https://petstore.swagger.io/v2/swagger.json",
+                    "file": null
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiDocumentationImportResponseCustomer"
+                },
+                "examples": {
+                  "Success status Response": {
+                    "summary": "This is the sample response for single API reference import with server variables.",
+                    "value": {
+                      "data": {
+                        "categories_created": 23,
+                        "articles_created": 23,
+                        "api_reference_id": "9874c1d9-033f-484c-8e3e-c343301eae57",
+                        "errors": [],
+                        "alerts": []
+                      },
+                      "extension_data": null,
+                      "success": true,
+                      "errors": [],
+                      "warnings": [],
+                      "information": []
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerApiBaseResponse"
+                },
+                "examples": {
+                  "Invalid project Version ID": {
+                    "summary": "Kindly ensure that the given project version ID is valid.",
+                    "value": {
+                      "extension_data": null,
+                      "success": false,
+                      "errors": [
+                        {
+                          "extension_data": null,
+                          "stack_trace": null,
+                          "description": "The supplied project version id d2eafb73-ccb6-4d15-9c4a-959b3c232ddba does not exist in your project",
+                          "error_code": null,
+                          "custom_data": null
+                        }
+                      ],
+                      "warnings": [],
+                      "information": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "APIReferences"
+        ],
+        "summary": "Resync the API reference spec file",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "ApiReferenceId",
+                  "ForceImport",
+                  "ProjectVersionId",
+                  "UserId"
+                ],
+                "type": "object",
+                "properties": {
+                  "ApiReferenceId": {
+                    "type": "string",
+                    "description": "The ID of the API reference"
+                  },
+                  "ProjectVersionId": {
+                    "type": "string",
+                    "description": "The ID of the project version"
+                  },
+                  "UserId": {
+                    "type": "string",
+                    "description": "The ID of the team account"
+                  },
+                  "ForceImport": {
+                    "type": "boolean",
+                    "description": "**true**: The errors and alerts will not be shown while resyncing the spec file\n**false**: The errors and alerts will be shown while resyncing the spec file",
+                    "default": true
+                  },
+                  "Url": {
+                    "type": "string",
+                    "description": "Url of the spec file"
+                  },
+                  "File": {
+                    "type": "string",
+                    "description": "File path of the spec file",
+                    "format": "binary"
+                  }
+                }
+              },
+              "examples": {
+                "Resync API reference request": {
+                  "summary": "Resync an API reference with specific apiReferenceId projectVersionId, userId, and a spec file url or a file type.",
+                  "value": {
+                    "api_reference_id": "d2eafb73-ccb6-4d15-9c4a-959b3c232ddb",
+                    "project_version_id": "5b291e6b-fa40-4ab9-941e-f8fffc23b376",
+                    "user_id": "46f48bc7-760f-4b07-b2d2-fce4aa8ba234",
+                    "force_import": true,
+                    "url": "https://petstore.swagger.io/v2/swagger.json",
+                    "file": null
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiDocumentationResyncResponseCustomer"
+                },
+                "examples": {
+                  "Success status Response": {
+                    "summary": "This is the sample response for single API reference resync with server variables.",
+                    "value": {
+                      "data": {
+                        "errors": [],
+                        "alerts": [],
+                        "categories_created": 23,
+                        "articles_created": 23
+                      },
+                      "extension_data": null,
+                      "success": true,
+                      "errors": [],
+                      "warnings": [],
+                      "information": []
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerApiBaseResponse"
+                },
+                "examples": {
+                  "Invalid project Version ID": {
+                    "summary": "Kindly ensure that the given project version ID is valid.",
+                    "value": {
+                      "extension_data": null,
+                      "success": false,
+                      "errors": [
+                        {
+                          "extension_data": null,
+                          "stack_trace": null,
+                          "description": "The supplied project version id d2eafb73-ccb6-4d15-9c4a-959b3c232ddba does not exist in your project",
+                          "error_code": null,
+                          "custom_data": null
+                        }
+                      ],
+                      "warnings": [],
+                      "information": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/APIReferences/{apiReferenceId}/Logs": {
+      "get": {
+        "tags": [
+          "APIReferences"
+        ],
+        "summary": "Get all API reference logs",
+        "parameters": [
+          {
+            "name": "apiReferenceId",
+            "in": "path",
+            "description": "The ID of the API reference",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": "1"
+            }
+          },
+          {
+            "name": "resultsPerPage",
+            "in": "query",
+            "description": "Total logs per page",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": "5"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiReferenceLogsWrapResponseCustomer"
+                },
+                "examples": {
+                  "Success status Response": {
+                    "summary": "This is the sample response for this endpoint. You can verify the individual logs in /v2/ApiReferences/{apiReferenceId}/Logs/{logId}.",
+                    "value": {
+                      "data": [
+                        {
+                          "logs_id": "33b5c7e-fcbe-4797-b144-1a7ca2508f44",
+                          "user_name": "Peter Jone",
+                          "user_id": "f11efc6f-e968-4e95-82eb-85ad61559de8",
+                          "title": "Import successful",
+                          "modified_at": "2024-06-13T14:30:00Z",
+                          "error_count": 12,
+                          "alerts_count": 34
+                        },
+                        {
+                          "logs_id": "5g25c7e-fcbe-4797-b144-1a7ca2843tv4",
+                          "user_name": "Theresa May",
+                          "user_id": "d71efc6f-e968-4e95-82eb-85ad6155984rf",
+                          "title": "Import successful",
+                          "modified_at": "2024-06-13T14:30:00Z",
+                          "error_count": 12,
+                          "alerts_count": 34
+                        }
+                      ],
+                      "extension_data": null,
+                      "success": true,
+                      "errors": [],
+                      "warnings": [],
+                      "information": []
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerApiBaseResponse"
+                },
+                "examples": {
+                  "Invalid API reference ID": {
+                    "summary": "Kindly ensure that the given API reference ID is valid.",
+                    "value": {
+                      "extension_data": null,
+                      "success": false,
+                      "errors": [
+                        {
+                          "extension_data": null,
+                          "stack_trace": null,
+                          "description": "Api reference not found.",
+                          "error_code": null,
+                          "custom_data": null
+                        }
+                      ],
+                      "warnings": [],
+                      "information": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DeleteApiReferenceResponseCustomer": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DeleteApiDefinitionCustomer"
+            },
+            "description": "Response data of the deletion"
+          },
+          "extension_data": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Extension data for customer API response"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Status indication for customer API response"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseError"
+            },
+            "description": "Errors in the customer API response"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseWarning"
+            },
+            "description": "Warnings in the customer API response"
+          },
+          "information": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseInformation"
+            },
+            "description": "Information passed by the customer API response"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteApiDefinitionCustomer": {
+        "type": "object",
+        "properties": {
+          "api_reference_id": {
+            "type": "string",
+            "description": "The ID of the API reference"
+          },
+          "details": {
+            "type": "string",
+            "description": "Status message"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BaseError": {
+        "type": "object",
+        "properties": {
+          "extension_data": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "This is the Extension data object"
+          },
+          "stack_trace": {
+            "type": "string",
+            "description": "Stack trace for the error response message"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description for the error cause"
+          },
+          "error_code": {
+            "type": "string",
+            "description": "Error code for API response"
+          },
+          "custom_data": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BaseInformation": {
+        "type": "object",
+        "properties": {
+          "extension_data": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Extension data for customer API response information"
+          },
+          "description": {
+            "type": "string",
+            "description": "Status description for customer API response information"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BaseWarning": {
+        "type": "object",
+        "properties": {
+          "extension_data": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Extension data for customer API warning"
+          },
+          "description": {
+            "type": "string",
+            "description": "Warning description"
+          },
+          "warning_code": {
+            "type": "string",
+            "description": "Warning code for customer API base response"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomerApiBaseResponse": {
+        "type": "object",
+        "properties": {
+          "extension_data": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Extension data for customer API response"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Status indication for customer API response"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseError"
+            },
+            "description": "Errors in the customer API response"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseWarning"
+            },
+            "description": "Warnings in the customer API response"
+          },
+          "information": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseInformation"
+            },
+            "description": "Information passed by the customer API response"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApiDocumentationImportResponseCustomer": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ApiDocsImportDataCustomer"
+              }
+            ],
+            "description": "Import response data"
+          },
+          "extension_data": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Extension data for customer API response"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Status indication for customer API response"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseError"
+            },
+            "description": "Errors in the customer API response"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseWarning"
+            },
+            "description": "Warnings in the customer API response"
+          },
+          "information": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseInformation"
+            },
+            "description": "Information passed by the customer API response"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApiDocsImportDataCustomer": {
+        "type": "object",
+        "properties": {
+          "categories_created": {
+            "type": "integer",
+            "description": "Total categories created",
+            "format": "int32"
+          },
+          "articles_created": {
+            "type": "integer",
+            "description": "Total articles created",
+            "format": "int32"
+          },
+          "api_reference_id": {
+            "type": "string",
+            "description": "API reference ID"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiErrorAndWarningsData"
+            },
+            "description": "Error log response"
+          },
+          "alerts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiErrorAndWarningsData"
+            },
+            "description": "Alerts log response"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApiErrorAndWarningsData": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Descriptive message of the problem"
+          },
+          "pointer": {
+            "type": "string",
+            "description": "Path where the problem occurs"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApiReferenceLogsWrapResponseCustomer": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiReferenceLogsDataCustomer"
+            },
+            "description": "API reference response data"
+          },
+          "extension_data": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Extension data for customer API response"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Status indication for customer API response"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseError"
+            },
+            "description": "Errors in the customer API response"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseWarning"
+            },
+            "description": "Warnings in the customer API response"
+          },
+          "information": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseInformation"
+            },
+            "description": "Information passed by the customer API response"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApiReferenceLogsDataCustomer": {
+        "type": "object",
+        "properties": {
+          "logs_id": {
+            "type": "string",
+            "description": "The API reference Log ID"
+          },
+          "user_name": {
+            "type": "string",
+            "description": "The name of the team account"
+          },
+          "user_id": {
+            "type": "string",
+            "description": "The ID of the team account"
+          },
+          "title": {
+            "type": "string",
+            "description": "Status of API reference"
+          },
+          "modified_at": {
+            "type": "string",
+            "description": "Modified date/time in ISO 8601 format",
+            "format": "date-time"
+          },
+          "error_count": {
+            "type": "integer",
+            "description": "Total error count",
+            "format": "int32"
+          },
+          "alerts_count": {
+            "type": "integer",
+            "description": "Total alerts count",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApiDocumentationResyncResponseCustomer": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ApiDocsResyncDataCustomer"
+              }
+            ],
+            "description": "Resync response data"
+          },
+          "extension_data": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Extension data for customer API response"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Status indication for customer API response"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseError"
+            },
+            "description": "Errors in the customer API response"
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseWarning"
+            },
+            "description": "Warnings in the customer API response"
+          },
+          "information": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseInformations"
+            },
+            "description": "Information passed by the customer API response"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApiDocsResyncDataCustomer": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiErrorAndWarningsData"
+            },
+            "description": "Error log response"
+          },
+          "alerts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiErrorAndWarningsDatas"
+            },
+            "description": "Alerts log response"
+          },
+          "categories_created": {
+            "type": "integer",
+            "description": "Total categories created",
+            "format": "int32"
+          },
+          "articles_created": {
+            "type": "integer",
+            "description": "Total articles created",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
